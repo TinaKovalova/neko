@@ -1,0 +1,45 @@
+//Percent
+@function toPercent($px, $from: 100) {
+    $result: math.div($px, $from) * 100%;
+    @return $result;
+}
+//VW
+@function toVW($px, $from: 100) {
+    $result: math.div($px, $from) * 100vw;
+    @return $result;
+}
+//REM
+@function toRem($px, $current: 16) {
+    $result: math.div($px, $current) + rem;
+    @return $result;
+}
+//EM
+@function toEm($px, $current: 16) {
+    $result: math.div($px, $current) + em;
+    @return $result;
+}
+
+// @mixin underline-hover($color, $transition) {
+//     position: relative;
+//     will-change: color;
+//     transition: color $transition;
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         top: 100%;
+//         left: 0;
+//         width: 0;
+//         height: toRem(1);
+//         background-color: $color;
+//         will-change: width;
+//         transition: width $transition;
+//     }
+//     @media (any-hover: hover) {
+//         &:hover {
+//             color: $color;
+//             &::after {
+//                 width: 100%;
+//             }
+//         }
+//     }
+// }

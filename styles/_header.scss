@@ -1,0 +1,124 @@
+.header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+
+    // .header__container
+
+    &__container {
+        display: flex;
+        column-gap: toPercent(120, $containerWidth);
+        align-items: center;
+    }
+
+    // .header__actionss
+
+    &__actions {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        column-gap: toRem(12);
+    }
+}
+.logo {
+    width: toRem(188);
+    aspect-ratio: 188 / 73;
+    // .logo__image
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        aspect-ratio: 188 / 73;
+    }
+}
+.navigation {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // .navigation__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: toRem(20) toRem(60);
+    }
+
+    // .navigation__item
+
+    &__item {
+    }
+
+    // .navigation__link
+
+    &__link {
+        transition: color 0.4s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+}
+.theme-form {
+    width: toRem(109);
+
+    &__lable {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: toRem(28);
+        background-color: #ffffff;
+        border-radius: toRem(220);
+        padding-inline: toRem(18);
+        padding-block: toRem(11);
+        &::before {
+            content: "";
+            width: 55.05%; /* 60/109 */
+            height: 101%;
+            border-radius: toRem(40);
+            position: absolute;
+            left: -1px;
+            top: 0;
+            background-color: $mainColor;
+            transition: all 0.4s;
+        }
+        &:has(> .theme-form__input:checked) {
+            &::before {
+                transform: translateX(84.3%);
+            }
+            & .theme-form__radio-wrapper.theme-form__radio-wrapper--day {
+                background-color: $lightColor;
+            }
+            & .theme-form__radio-wrapper.theme-form__radio-wrapper--night {
+                background-color: $darkColor;
+            }
+        }
+    }
+    // .theme-form__radio-wrapper
+
+    &__radio-wrapper {
+        width: toRem(24);
+        height: toRem(24);
+        &--night {
+            background-color: $lightColor;
+            mask: url("../images/icons/moon.svg") center/contain no-repeat;
+        }
+        &--day {
+            background-color: $darkColor;
+            mask: url("../images/icons/sun.svg") center/contain no-repeat;
+        }
+    }
+
+    // .theme-form__input
+
+    &__input {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        // visibility: hidden;
+        position: absolute;
+    }
+}

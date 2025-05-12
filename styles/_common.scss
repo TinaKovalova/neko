@@ -1,0 +1,36 @@
+.button {
+    background-color: $mainColor;
+    font-size: toRem(12);
+    line-height: 1.5;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: toRem(220);
+    padding-inline: toRem(48);
+    padding-block: toRem(14);
+    text-align: center;
+    transition: background-color 0.4s;
+    &--icon {
+        position: relative;
+        &::before {
+            content: "";
+            width: toRem(16);
+            height: toRem(16);
+            position: absolute;
+            left: toRem(21);
+            top: 50%;
+            transform: translateY(-50%);
+            background: url("../images/icons/arrow-side.svg") center/contain no-repeat;
+        }
+    }
+    &--dark {
+        background-color: $primaryColor;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $primaryColor;
+        }
+        &--dark:hover {
+            background-color: $mainColor;
+        }
+    }
+}
