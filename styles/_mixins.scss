@@ -18,28 +18,3 @@
     $result: math.div($px, $current) + em;
     @return $result;
 }
-
-// @mixin underline-hover($color, $transition) {
-//     position: relative;
-//     will-change: color;
-//     transition: color $transition;
-//     &::after {
-//         content: "";
-//         position: absolute;
-//         top: 100%;
-//         left: 0;
-//         width: 0;
-//         height: toRem(1);
-//         background-color: $color;
-//         will-change: width;
-//         transition: width $transition;
-//     }
-//     @media (any-hover: hover) {
-//         &:hover {
-//             color: $color;
-//             &::after {
-//                 width: 100%;
-//             }
-//         }
-//     }
-// }

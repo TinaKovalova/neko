@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:regular,700&display=swap");
 
-$icon-quote: unquote('"\\e90c"');
+$icon-twitter: unquote('"\\e901"');
 $icon-crown-elegant: unquote('"\\e903"');
 $icon-crown-royal: unquote('"\\e904"');
 $icon-crown-triangles: unquote('"\\e905"');
 $icon-house: unquote('"\\e906"');
-
+$icon-quote: unquote('"\\e90c"');
+$icon-facebook: unquote('"\\e900"');
+$icon-instagram: unquote('"\\ea92"');
+$icon-youtube: unquote('"\\ea9d"');
+$icon-linkedin2: unquote('"\\eaca"');
 @font-face {
     font-family: "icomoon";
     src:
@@ -32,6 +36,11 @@ $icon-house: unquote('"\\e906"');
     -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-twitter {
+    &:before {
+        content: $icon-twitter;
+    }
+}
 ._icon-crown-elegant {
     &:before {
         content: $icon-crown-elegant;
@@ -52,9 +61,28 @@ $icon-house: unquote('"\\e906"');
         content: $icon-house;
     }
 }
-
 ._icon-quote {
     &:before {
         content: $icon-quote;
+    }
+}
+._icon-facebook {
+    &:before {
+        content: $icon-facebook;
+    }
+}
+._icon-instagram {
+    &:before {
+        content: $icon-instagram;
+    }
+}
+._icon-youtube {
+    &:before {
+        content: $icon-youtube;
+    }
+}
+._icon-linkedin {
+    &:before {
+        content: $icon-linkedin2;
     }
 }

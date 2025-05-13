@@ -36,3 +36,30 @@
         }
     }
 }
+.title-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(28);
+    font-weight: 700;
+    // .title-block__subtitle
+
+    &__subtitle {
+        flex: toRem(12);
+        letter-spacing: toRem(4.32);
+        text-transform: uppercase;
+        color: $subtitleColor;
+        @media (max-width: toEm(767.98)) {
+            font-size: toRem(10);
+        }
+    }
+
+    // .title-block__title
+
+    &__title {
+        font-size: toRem(40);
+        text-transform: capitalize;
+        @media (max-width: toEm(767.98)) {
+            font-size: toRem(36);
+        }
+    }
+}
