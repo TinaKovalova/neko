@@ -93,7 +93,7 @@
     &__link {
         font-weight: 700;
         text-transform: capitalize;
-        transition: color 0.4s;
+        transition: color 0.3s;
         @media (any-hover: hover) {
             &:hover {
                 color: $mainColor;
@@ -162,6 +162,11 @@
         opacity: 0;
         // visibility: hidden;
         position: absolute;
+    }
+    @media (any-hover: hover) {
+        &:hover label::before {
+            background-color: $primaryColor;
+        }
     }
 }
 .burger-btn-close {

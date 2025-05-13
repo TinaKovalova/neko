@@ -2,6 +2,7 @@
     border-start-start-radius: toRem(160);
     border-start-end-radius: toRem(160);
     background-color: $darkBackground;
+    color: $darkText;
     // .footer__container
 
     &__container {
@@ -218,6 +219,7 @@
 
     &__link {
         max-width: toRem(184);
+        transition: color 0.3s;
         @media (any-hover: hover) {
             &:hover {
                 color: $mainColor;
@@ -233,7 +235,7 @@
         font-weight: 700;
         text-transform: capitalize;
         &:not(:last-child) {
-            margin-bottom: toRem(27);
+            margin-bottom: toRem(24);
         }
     }
 
@@ -254,6 +256,12 @@
 
     &__link {
         text-transform: capitalize;
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
     }
 }
 .social {
@@ -283,5 +291,23 @@
     // .social__link
 
     &__link {
+        width: toRem(44);
+        height: toRem(44);
+        border-radius: 50%;
+        background-color: $mainColor;
+        color: $darkBackground;
+        font-size: toRem(24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+            background-color 0.4s,
+            color 0.4s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primaryColor;
+                color: inherit;
+            }
+        }
     }
 }
