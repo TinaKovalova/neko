@@ -1,5 +1,6 @@
 .button {
     background-color: $mainColor;
+    color: $darkText;
     font-size: toRem(12);
     line-height: 1.5;
     font-weight: 700;
@@ -19,7 +20,8 @@
             left: toRem(21);
             top: 50%;
             transform: translateY(-50%);
-            background: url("../images/icons/arrow-side.svg") center/contain no-repeat;
+            background-color: $darkText;
+            mask: url("../images/svg-icons/arrow-side.svg") center/contain no-repeat;
         }
     }
     &--dark {
