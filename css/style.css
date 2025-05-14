@@ -826,6 +826,11 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.subscription-form__input:-webkit-autofill, .subscription-form__input:-webkit-autofill:hover, .subscription-form__input:-webkit-autofill:focus, .subscription-form__input:-webkit-autofill:active {
+  border: 0.0625rem solid inherit;
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0px 1000px #161616 inset;
+}
 .subscription-form__button {
   position: absolute;
   top: 0.75rem;
