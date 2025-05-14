@@ -2,8 +2,8 @@
 .hero {
     border-end-start-radius: toRem(60);
     border-end-end-radius: toRem(60);
-    background-color: light-dark(linear-gradient(66deg, #fffefe 2.93%, #f6dde9 100%), $darkBackground);
     padding-block-start: toRem(119);
+    background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
 
     // .hero__container
 
@@ -12,7 +12,6 @@
         padding-block-end: toRem(110);
         display: flex;
         align-items: center;
-
         justify-content: space-between;
         gap: toRem(30);
         @media (max-width: toEm(991.98)) {
