@@ -41,9 +41,7 @@
     flex-direction: column;
     align-items: flex-start;
     row-gap: toRem(28);
-    @media (max-width: toEm(767.98)) {
-        text-align: center;
-    }
+    
 
     // .title-block__subtitle
 
