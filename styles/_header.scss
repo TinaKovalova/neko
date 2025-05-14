@@ -1,8 +1,14 @@
 .header {
     position: fixed;
-    top: toRem(40);
+    z-index: 100;
+    top: 0;
     left: 0;
     width: 100%;
+    padding-block-start: toRem(40);
+    background-color: $darkBackground;
+    @media (max-width: toEm(991.98)) {
+        padding-block-start: toRem(34);
+    }
 
     // .header__container
 

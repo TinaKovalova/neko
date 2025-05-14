@@ -39,14 +39,19 @@
 .title-block {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     row-gap: toRem(28);
-    font-weight: 700;
+    @media (max-width: toEm(767.98)) {
+        text-align: center;
+    }
+
     // .title-block__subtitle
 
     &__subtitle {
         flex: toRem(12);
         letter-spacing: toRem(4.32);
         text-transform: uppercase;
+        font-weight: 700;
         color: $subtitleColor;
         @media (max-width: toEm(767.98)) {
             font-size: toRem(10);
@@ -58,8 +63,71 @@
     &__title {
         font-size: toRem(40);
         text-transform: capitalize;
+        font-weight: 700;
         @media (max-width: toEm(767.98)) {
             font-size: toRem(36);
         }
+    }
+    //title-block__text
+    &__text {
+        @media (max-width: toEm(767.98)) {
+            // font-size: toRem(12);
+        }
+    }
+}
+
+.video-preview {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    // .video-preview__title-block
+
+    &__title-block {
+        &.title-block {
+            row-gap: 0;
+            // .title-block__subtitle
+
+            & .title-block__subtitle {
+                color: $darkText;
+            }
+
+            // .title-block__title
+
+            & .title-block__title {
+                font-size: toRem(16);
+            }
+        }
+    }
+
+    // .video-preview__button
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        width: toRem(52);
+        height: toRem(52);
+        border-radius: 50%;
+        background:
+            url("../images/svg-icons/play.svg") center 50% no-repeat,
+            $mainColor;
+        transition: background-color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primaryColor;
+            }
+        }
+        @media (max-width: toEm(479.98)) {
+            width: toRem(43);
+            height: toRem(43);
+        }
+    }
+
+    // .video-preview__video
+
+    &__video {
+        position: fixed;
+        display: none;
     }
 }
