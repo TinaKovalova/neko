@@ -323,7 +323,7 @@ body {
   width: 100%;
   -webkit-padding-before: 2.5rem;
           padding-block-start: 2.5rem;
-  background-color: #161616;
+  background-color: light-dark(linear-gradient(66deg, #fffefe 2.93%, #f6dde9 100%), #161616);
 }
 @media (max-width: 61.99875em) {
   .header {
@@ -655,7 +655,7 @@ body {
 .hero {
   border-end-start-radius: 3.75rem;
   border-end-end-radius: 3.75rem;
-  background-color: #161616;
+  background-color: light-dark(linear-gradient(66deg, #fffefe 2.93%, #f6dde9 100%), #161616);
   -webkit-padding-before: 7.4375rem;
           padding-block-start: 7.4375rem;
 }

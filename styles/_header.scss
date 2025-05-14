@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     padding-block-start: toRem(40);
-    background-color: $darkBackground;
+    background-color: light-dark(linear-gradient(66deg, #fffefe 2.93%, #f6dde9 100%), $darkBackground);
     @media (max-width: toEm(991.98)) {
         padding-block-start: toRem(34);
     }
