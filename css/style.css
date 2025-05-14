@@ -162,6 +162,9 @@ body {
   background-color: light-dark(#fbf6f8, #1d1d1d);
   color: light-dark(#232323, #ffffff);
 }
+body:has(.menu-burger.active) {
+  overflow-y: hidden;
+}
 
 .wrapper {
   min-height: 100%;

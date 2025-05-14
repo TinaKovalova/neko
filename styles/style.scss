@@ -14,6 +14,9 @@ body {
     line-height: 1.5;
     background-color: light-dark($lightColor, $darkColor);
     color: light-dark($lightText, $darkText);
+    &:has(.menu-burger.active) {
+        overflow-y: hidden;
+    }
 }
 .wrapper {
     min-height: 100%;
