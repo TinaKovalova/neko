@@ -190,3 +190,104 @@
         }
     }
 }
+.service-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(10);
+    padding-block-start: toRem(50);
+    padding-block-end: toRem(53);
+    padding-inline: toRem(28);
+
+    @media (max-width: toEm(747.98)) {
+        padding-block-start: toRem(31);
+        padding-block-end: toRem(28);
+        padding-inline: toRem(28);
+    }
+    // .service-card__image-link
+
+    &__image-link {
+        display: block;
+        aspect-ratio: 237 / 144;
+        border-radius: toRem(20);
+        background-color: #d9d9d9;
+        overflow: hidden;
+
+        &:not(:last-child) {
+            margin-bottom: toRem(16);
+        }
+        @media (any-hover: hover) {
+            &:hover .service-card__image {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    // .service-card__image
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 237 / 144;
+        transition: transform 0.4s;
+    }
+
+    // .service-card__title
+
+    &__title {
+        font-size: toRem(24);
+        font-weight: 700;
+    }
+
+    // .service-card__title-link
+
+    &__title-link {
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+    }
+
+    // .service-card__description
+
+    &__description {
+        flex-grow: 1;
+    }
+}
+
+.gallery-card {
+    border-radius: toRem(20);
+    background-color: #d9d9d9;
+    position: relative;
+
+    // .gallery-card__image
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 202 / 233;
+        border-radius: toRem(20);
+    }
+
+    // .gallery-card__button
+
+    &__button {
+        width: toRem(70);
+        height: toRem(70);
+        border-radius: 50%;
+        background-color: $mainColor;
+        position: absolute;
+        bottom: 0;
+        right: toRem(26);
+        transform: translateY(50%);
+        transition: background-color 0.4s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primaryColor;
+            }
+        }
+    }
+}

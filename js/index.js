@@ -5,7 +5,7 @@ function windowLoaded() {
     const themeCheckBox = document.querySelector(".theme-form__input");
     const html = document.documentElement;
     const burgerButton = document.querySelector(".burger-btn");
-    const closeBurgerMenuButton = document.querySelector(".burger-btn-close");
+    // const closeBurgerMenuButton = document.querySelector(".burger-btn-close");
     const menuBurger = document.querySelector(".menu-burger");
     const savedTheme = localStorage.getItem("nekoinn-theme");
     const setPageTheme = (theme) => html.style.setProperty("color-scheme", theme);
