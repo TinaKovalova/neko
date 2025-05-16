@@ -384,13 +384,13 @@ body:has(.menu-burger.active) {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   z-index: 100;
   top: 0;
-  left: 0;
   width: 100%;
   -webkit-padding-before: 2.5rem;
           padding-block-start: 2.5rem;
+  background: light-dark(rgba(246, 221, 233, 0.5), #161616);
 }
 @media (max-width: 61.99875em) {
   .header {
@@ -722,8 +722,8 @@ body:has(.menu-burger.active) {
 .hero {
   border-end-start-radius: 3.75rem;
   border-end-end-radius: 3.75rem;
-  -webkit-padding-before: 7.4375rem;
-          padding-block-start: 7.4375rem;
+  -webkit-padding-before: 3.125rem;
+          padding-block-start: 3.125rem;
   background: light-dark(rgba(246, 221, 233, 0.5), #161616);
 }
 .hero__container {
@@ -856,6 +856,13 @@ body:has(.menu-burger.active) {
 .hero__image-block::after {
   right: 0;
   bottom: 0;
+}
+@media (min-width: 61.99875em) {
+  .hero__image-block {
+    -webkit-transform: translateX(1.8125rem);
+        -ms-transform: translateX(1.8125rem);
+            transform: translateX(1.8125rem);
+  }
 }
 @media (max-width: 47.99875em) {
   .hero__image-block {

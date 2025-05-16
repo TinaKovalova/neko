@@ -2,7 +2,7 @@
 .hero {
     border-end-start-radius: toRem(60);
     border-end-end-radius: toRem(60);
-    padding-block-start: toRem(119);
+    padding-block-start: toRem(50);
     background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
 
     // .hero__container
@@ -103,6 +103,7 @@
         padding-block-end: toRem(95);
         padding-inline-start: toRem(77);
         padding-inline-end: toRem(29);
+
         position: relative;
         &::before,
         &::after {
@@ -125,9 +126,12 @@
             right: 0;
             bottom: 0;
         }
+        @media (min-width: toEm(991.98)) {
+            transform: translateX(toRem(29));
+        }
+
         @media (max-width: toEm(767.98)) {
             width: toRem(430);
-            // min-width: toRem(430);
             min-width: toRem(320);
             height: auto;
             aspect-ratio: 430 / 470;

@@ -1,11 +1,10 @@
 .header {
-    position: fixed;
+    position: sticky;
     z-index: 100;
     top: 0;
-    left: 0;
     width: 100%;
     padding-block-start: toRem(40);
-    // background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
+    background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
     @media (max-width: toEm(991.98)) {
         padding-block-start: toRem(34);
     }
