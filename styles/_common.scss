@@ -45,7 +45,7 @@
     // .title-block__subtitle
 
     &__subtitle {
-        flex: toRem(12);
+        font-size: toRem(12);
         letter-spacing: toRem(4.32);
         text-transform: uppercase;
         font-weight: 700;
