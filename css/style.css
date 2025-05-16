@@ -1108,6 +1108,115 @@ body:has(.menu-burger.active) {
   }
 }
 
+.about__container {
+  padding-block: 2.125rem;
+  border-radius: 2.5rem;
+  background-color: light-dark(#ffffff, #161616);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3.5rem 1.25rem;
+}
+@media (max-width: 61.99875em) {
+  .about__container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.about__content {
+  -webkit-padding-start: 3.625rem;
+          padding-inline-start: 3.625rem;
+}
+@media (max-width: 61.99875em) {
+  .about__content {
+    padding-inline: 0;
+  }
+}
+.about__title-block {
+  row-gap: 1.0625rem;
+}
+.about__title-block .title-block__title:not(:last-child) {
+  margin-bottom: 0.875rem;
+}
+.about__title-block .title-block__text {
+  max-width: 33.0625rem;
+}
+.about__title-block .title-block__text:not(:last-child) {
+  margin-bottom: 2.3125rem;
+}
+@media (max-width: 47.99875em) {
+  .about__title-block .button {
+    width: 100%;
+  }
+}
+@media (max-width: 61.99875em) {
+  .about__title-block {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .about__title-block .title-block__text {
+    max-width: 37.5rem;
+  }
+}
+.about__image-wrapper {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transform: translateX(4rem);
+      -ms-transform: translateX(4rem);
+          transform: translateX(4rem);
+  width: 34.4375rem;
+  height: 33.5625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.about__image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  right: 32%;
+  width: 44.5820433437%;
+  aspect-ratio: 1/1;
+  background: url("../images/svg-icons/decor.svg") center/contain no-repeat;
+}
+@media (max-width: 47.99875em) {
+  .about__image-wrapper {
+    width: 100%;
+    height: auto;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+.about__image {
+  width: 115.0635208711%;
+  aspect-ratio: 634/469;
+  position: relative;
+}
+@media (max-width: 47.99875em) {
+  .about__image {
+    width: 125.7978723404%;
+    aspect-ratio: 473/350;
+  }
+}
+
 .footer {
   border-start-start-radius: 10rem;
   border-start-end-radius: 10rem;

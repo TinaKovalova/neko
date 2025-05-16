@@ -325,3 +325,112 @@
         }
     }
 }
+.about {
+    // .about__container
+
+    &__container {
+        padding-block: toRem(34);
+        border-radius: toRem(40);
+        background-color: light-dark($darkText, $darkBackground);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: toRem(56) toRem(20);
+        @media (max-width: toEm(991.98)) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    // .about__content
+
+    &__content {
+        padding-inline-start: toRem(58);
+        // min-width: toRem(400);
+        @media (max-width: toEm(991.98)) {
+            padding-inline: 0;
+        }
+    }
+
+    // .about__title-block
+
+    &__title-block {
+        row-gap: toRem(17);
+        // .title-block__subtitle
+
+        & .title-block__subtitle {
+        }
+
+        // .title-block__title
+
+        & .title-block__title {
+            &:not(:last-child) {
+                margin-bottom: toRem(14);
+            }
+        }
+
+        // .title-block__text
+
+        & .title-block__text {
+            max-width: toRem(529);
+            &:not(:last-child) {
+                margin-bottom: toRem(37);
+            }
+        }
+        & .button {
+            @media (max-width: toEm(767.98)) {
+                width: 100%;
+            }
+        }
+        @media (max-width: toEm(991.98)) {
+            align-items: center;
+            text-align: center;
+            & .title-block__text {
+                max-width: toRem(600);
+            }
+        }
+    }
+
+    // .about__image-wrapper
+
+    &__image-wrapper {
+        align-self: flex-start;
+        flex-shrink: 0;
+        transform: translateX(toRem(64));
+        width: toRem(551);
+        height: toRem(537);
+        display: flex;
+        align-items: center;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 12%;
+            right: 32%;
+            width: toPercent(288, 646);
+            aspect-ratio: 1 / 1;
+            background: url("../images/svg-icons/decor.svg") center/contain no-repeat;
+        }
+        @media (max-width: toEm(767.98)) {
+            width: 100%;
+            height: auto;
+            transform: translateX(0);
+        }
+    }
+
+    // .about__image
+
+    &__image {
+        width: toPercent(634, 551);
+        aspect-ratio: 634 / 469;
+        position: relative;
+        @media (max-width: toEm(767.98)) {
+            width: toPercent(473, 376);
+            aspect-ratio: 473 / 350;
+        }
+    }
+}
+.title-block {
+}
+.button {
+}
