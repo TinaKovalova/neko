@@ -1065,7 +1065,7 @@ body:has(.menu-burger.active) {
           padding-block-end: 5.5rem;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1075,18 +1075,18 @@ body:has(.menu-burger.active) {
           flex-direction: column;
   row-gap: 6.5625rem;
   background-color: #c75e90;
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
   -webkit-transition: -webkit-transform 0.6s;
   transition: -webkit-transform 0.6s;
   transition: transform 0.6s;
   transition: transform 0.6s, -webkit-transform 0.6s;
 }
 .menu-burger.active {
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 @media (max-width: 61.99875em) {
   .menu-burger {
@@ -1630,7 +1630,7 @@ body:has(.menu-burger.active) {
 }
 .our-rooms__image-wrapper {
   width: 36rem;
-  height: 35.6875rem;
+  aspect-ratio: 576/571;
   overflow: hidden;
   border-radius: 2.5rem;
   background-color: #d9d9d9;
