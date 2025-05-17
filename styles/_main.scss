@@ -781,7 +781,10 @@
         }
         & .swiper-slide {
             width: toRem(424);
-            min-height: toRem(453);
+            // min-height: toRem(453);
+            & .review-card {
+                height: 100%;
+            }
             @media (max-width: toEm(991.98)) {
                 width: toRem(376);
             }

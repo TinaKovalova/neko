@@ -733,6 +733,11 @@ body:has(.menu-burger.active) {
     height: 4.125rem;
   }
 }
+.review-card__text {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
 .review-card__author-info {
   -webkit-padding-before: 0.5rem;
           padding-block-start: 0.5rem;
@@ -1958,7 +1963,9 @@ body:has(.menu-burger.active) {
 }
 .reviews__swiper .swiper-slide {
   width: 26.5rem;
-  min-height: 28.3125rem;
+}
+.reviews__swiper .swiper-slide .review-card {
+  height: 100%;
 }
 @media (max-width: 61.99875em) {
   .reviews__swiper .swiper-slide {
