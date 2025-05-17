@@ -18,3 +18,42 @@
     $result: math.div($px, $current) + em;
     @return $result;
 }
+
+%swiper-buttons {
+    & .swiper-button-prev,
+    & .swiper-button-next {
+        display: none;
+        width: toRem(49);
+        height: toRem(49);
+        border-radius: 50%;
+        background-color: $mainColor;
+        color: transparent;
+        font-size: 0;
+        &::after {
+            width: 50%;
+            background-color: $darkText;
+            mask: url("../images/svg-icons/arrow-side.svg") center/contain no-repeat;
+        }
+        @media (max-width: toEm(991.98)) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: toEm(400)) {
+            width: toRem(35);
+            height: toRem(35);
+        }
+    }
+    & .swiper-button-prev {
+        left: 0;
+        transform: translate(-50%, -50%);
+        &::after {
+            transform: rotate(180deg);
+        }
+       
+    }
+    & .swiper-button-next {
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+}

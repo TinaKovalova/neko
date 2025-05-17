@@ -658,43 +658,7 @@
                 height: auto;
             }
         }
-        & .swiper-button-prev,
-        & .swiper-button-next {
-            display: none;
-            width: toRem(49);
-            height: toRem(49);
-            border-radius: 50%;
-            background-color: $mainColor;
-            color: transparent;
-            font-size: 0;
-            &::after {
-                width: 50%;
-                background-color: $darkText;
-                mask: url("../images/svg-icons/arrow-side.svg") center/contain no-repeat;
-            }
-            @media (max-width: toEm(991.98)) {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            @media (max-width: toEm(479.98)) {
-                width: toRem(35);
-                height: toRem(35);
-            }
-        }
-        & .swiper-button-prev {
-            left: 0;
-            transform: translate(-50%, -50%);
-            &::after {
-                transform: rotate(180deg);
-            }
-            @media (max-width: toEm(479.98)) {
-            }
-        }
-        & .swiper-button-next {
-            right: 0;
-            transform: translate(50%, -50%);
-        }
+        @extend %swiper-buttons;
     }
 }
 //Pricing section----------------------------
@@ -768,5 +732,64 @@
             flex-wrap: wrap;
             gap: toRem(32);
         }
+    }
+}
+//Reviews section----------------------------
+.reviews {
+    // .reviews__container
+
+    &__container {
+        padding-block-start: toRem(56);
+        padding-block-end: toRem(78);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: toRem(83);
+    }
+
+    // .reviews__title-block
+
+    &__title-block {
+        row-gap: toRem(18);
+        max-width: toRem(868);
+        // .title-block__subtitle
+
+        & .title-block__subtitle {
+            &:not(:last-child) {
+                margin-bottom: toRem(5);
+            }
+        }
+
+        // .title-block__title
+
+        & .title-block__title {
+        }
+
+        // .title-block__text
+
+        & .title-block__text {
+        }
+    }
+
+    // .reviews__swiper
+
+    &__swiper {
+        width: 100%;
+        position: relative;
+        &.swiper {
+            position: static;
+        }
+        & .swiper-slide {
+            width: toRem(424);
+            min-height: toRem(453);
+            @media (max-width: toEm(991.98)) {
+                width: toRem(376);
+            }
+            @media (max-width: toEm(479.98)) {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @extend %swiper-buttons;
     }
 }
