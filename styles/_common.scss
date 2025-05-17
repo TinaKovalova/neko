@@ -32,7 +32,7 @@
             background-color: $primaryColor;
         }
         &--dark:hover {
-            background-color: $mainColor;
+            background-color: $lightText;
         }
     }
 }
@@ -41,6 +41,10 @@
     flex-direction: column;
     align-items: flex-start;
     row-gap: toRem(28);
+    &--centered {
+        align-items: center;
+        text-align: center;
+    }
 
     // .title-block__subtitle
 
@@ -288,6 +292,120 @@
             &:hover {
                 background-color: $primaryColor;
             }
+        }
+    }
+}
+.rate-card {
+    padding-block-start: toRem(44);
+    padding-block-end: toRem(48);
+    padding-inline: toRem(41);
+    border-radius: toRem(40);
+    background-color: light-dark($darkText, $darkBackground);
+    @media (max-width: toEm(1100)) {
+        padding-inline-end: toRem(30);
+        padding-inline-start: toRem(40);
+    }
+    @media (max-width: toEm(380)) {
+        padding-inline: toRem(15);
+        padding-block: toRem(30);
+    }
+    // .rate-card__header
+
+    &__header {
+        &:not(:last-child) {
+            margin-bottom: toRem(38);
+            @media (max-width: toEm(428)) {
+                margin-bottom: toRem(25);
+            }
+        }
+    }
+    //rate-card__header-body
+    &__header-body {
+        flex-grow: 1;
+        font-family: "Poppins", sans-serif;
+        text-transform: uppercase;
+    }
+
+    // .rate-card__title
+
+    &__title {
+        font-size: toRem(16);
+        letter-spacing: toRem(4.16);
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $mainColor;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: toRem(20);
+        &::before {
+            font-size: toRem(57);
+            line-height: 1;
+            @media (max-width: toEm(428)) {
+                font-size: toRem(40);
+            }
+        }
+    }
+
+    // .rate-card__price
+
+    &__price {
+        text-wrap: balance;
+    }
+
+    // .rate-card__price-amount
+
+    &__price-amount {
+        font-size: toRem(40);
+        font-weight: 700;
+        @media (max-width: toEm(428)) {
+            font-size: toRem(30);
+        }
+    }
+
+    // .rate-card__servise-list
+
+    &__servise-list {
+        & > *:not(:last-child) {
+            margin-bottom: toRem(16);
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(45);
+        }
+    }
+
+    // .rate-card__item
+
+    &__item {
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        column-gap: toRem(16);
+        &::before {
+            flex-shrink: 0;
+            content: "";
+            width: toRem(37);
+            height: toRem(37);
+            background-color: light-dark($lightText, $darkText);
+            mask: url("../images/svg-icons/check-circle.svg") center/contain no-repeat;
+        }
+    }
+    & .button {
+        min-width: toRem(236);
+        @media (max-width: toEm(350)) {
+            min-width: 100%;
+        }
+    }
+    &--primary {
+        color: $darkText;
+        background-color: $mainColor;
+
+        & .rate-card__item::before {
+            background-color: $darkText;
+        }
+        & .rate-card__title {
+            color: inherit;
         }
     }
 }

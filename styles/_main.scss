@@ -597,11 +597,6 @@
         }
         & .button {
             width: 100%;
-            @media (any-hover: hover) {
-                &:hover {
-                    background-color: $lightText;
-                }
-            }
         }
     }
 
@@ -633,7 +628,7 @@
         }
     }
 }
-
+//Gallery section----------------------------
 .gallery {
     // .gallery__container
 
@@ -699,6 +694,79 @@
         & .swiper-button-next {
             right: 0;
             transform: translate(50%, -50%);
+        }
+    }
+}
+//Pricing section----------------------------
+.pricing {
+    // .pricing__container
+
+    &__container {
+        padding-block-start: toRem(70);
+        padding-block-end: toRem(56);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: toRem(75);
+    }
+
+    // .pricing__title-block
+
+    &__title-block {
+        max-width: toRem(646);
+        row-gap: toRem(18);
+
+        // .title-block__subtitle
+
+        & .title-block__subtitle {
+            &:not(:last-child) {
+                margin-bottom: toRem(3);
+            }
+        }
+
+        // .title-block__title
+
+        & .title-block__title {
+            font-size: toRem(40);
+        }
+
+        // .title-block__text
+
+        & .title-block__text {
+        }
+    }
+
+    // .pricing__rates
+
+    &__rates {
+        width: 100%;
+        display: grid;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        & > * {
+            min-width: 33%;
+            max-width: toRem(444);
+
+            @media (max-width: toEm(991.98)) {
+                min-width: calc(50% - toRem(16));
+            }
+            @media (max-width: toEm(814)) {
+                flex-grow: 1;
+            }
+        }
+
+        & .rate-card--primary {
+            transform: scale(1.1);
+            @media (max-width: toEm(991.98)) {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: toEm(991.98)) {
+            flex-wrap: wrap;
+            gap: toRem(32);
         }
     }
 }

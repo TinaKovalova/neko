@@ -61,6 +61,34 @@
   content: "\eaca";
 }
 
+@font-face {
+  font-family: "Glyphter";
+  src: url("../fonts/Glyphter.woff") format("woff"), url("../fonts/Glyphter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+[class*=icon-crown-]:before {
+  display: inline-block;
+  font-family: "Glyphter";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-crown-elegant:before {
+  content: "A";
+}
+
+.icon-crown-royal:before {
+  content: "B";
+}
+
+.icon-crown-triangles:before {
+  content: "C";
+}
+
 *,
 *::before,
 *::after {
@@ -229,7 +257,7 @@ body:has(.menu-burger.active) {
     background-color: #8e345f;
   }
   .button--dark:hover {
-    background-color: #c75e90;
+    background-color: #232323;
   }
 }
 
@@ -245,6 +273,12 @@ body:has(.menu-burger.active) {
       -ms-flex-align: start;
           align-items: flex-start;
   row-gap: 1.75rem;
+}
+.title-block--centered {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 .title-block__subtitle {
   font-size: 0.75rem;
@@ -483,6 +517,135 @@ body:has(.menu-burger.active) {
   .gallery-card__button:hover {
     background-color: #8e345f;
   }
+}
+
+.rate-card {
+  -webkit-padding-before: 2.75rem;
+          padding-block-start: 2.75rem;
+  -webkit-padding-after: 3rem;
+          padding-block-end: 3rem;
+  padding-inline: 2.5625rem;
+  border-radius: 2.5rem;
+  background-color: light-dark(#ffffff, #161616);
+}
+@media (max-width: 68.75em) {
+  .rate-card {
+    -webkit-padding-end: 1.875rem;
+            padding-inline-end: 1.875rem;
+    -webkit-padding-start: 2.5rem;
+            padding-inline-start: 2.5rem;
+  }
+}
+@media (max-width: 23.75em) {
+  .rate-card {
+    padding-inline: 0.9375rem;
+    padding-block: 1.875rem;
+  }
+}
+.rate-card__header:not(:last-child) {
+  margin-bottom: 2.375rem;
+}
+@media (max-width: 26.75em) {
+  .rate-card__header:not(:last-child) {
+    margin-bottom: 1.5625rem;
+  }
+}
+.rate-card__header-body {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+.rate-card__title {
+  font-size: 1rem;
+  letter-spacing: 0.26rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #c75e90;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+}
+.rate-card__title::before {
+  font-size: 3.5625rem;
+  line-height: 1;
+}
+@media (max-width: 26.75em) {
+  .rate-card__title::before {
+    font-size: 2.5rem;
+  }
+}
+.rate-card__price {
+  text-wrap: balance;
+}
+.rate-card__price-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+@media (max-width: 26.75em) {
+  .rate-card__price-amount {
+    font-size: 1.875rem;
+  }
+}
+.rate-card__servise-list > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.rate-card__servise-list:not(:last-child) {
+  margin-bottom: 2.8125rem;
+}
+.rate-card__item {
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+}
+.rate-card__item::before {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  content: "";
+  width: 2.3125rem;
+  height: 2.3125rem;
+  background-color: light-dark(#232323, #ffffff);
+  -webkit-mask: url("../images/svg-icons/check-circle.svg") center/contain no-repeat;
+          mask: url("../images/svg-icons/check-circle.svg") center/contain no-repeat;
+}
+.rate-card .button {
+  min-width: 14.75rem;
+}
+@media (max-width: 21.875em) {
+  .rate-card .button {
+    min-width: 100%;
+  }
+}
+.rate-card--primary {
+  color: #ffffff;
+  background-color: #c75e90;
+}
+.rate-card--primary .rate-card__item::before {
+  background-color: #ffffff;
+}
+.rate-card--primary .rate-card__title {
+  color: inherit;
 }
 
 .header {
@@ -1505,11 +1668,6 @@ body:has(.menu-burger.active) {
 .care__title-block .button {
   width: 100%;
 }
-@media (any-hover: hover) {
-  .care__title-block .button:hover {
-    background-color: #232323;
-  }
-}
 .care__service {
   min-height: 29.75rem;
   position: relative;
@@ -1618,6 +1776,82 @@ body:has(.menu-burger.active) {
   -webkit-transform: translate(50%, -50%);
       -ms-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
+}
+
+.pricing__container {
+  -webkit-padding-before: 4.375rem;
+          padding-block-start: 4.375rem;
+  -webkit-padding-after: 3.5rem;
+          padding-block-end: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 4.6875rem;
+}
+.pricing__title-block {
+  max-width: 40.375rem;
+  row-gap: 1.125rem;
+}
+.pricing__title-block .title-block__subtitle:not(:last-child) {
+  margin-bottom: 0.1875rem;
+}
+.pricing__title-block .title-block__title {
+  font-size: 2.5rem;
+}
+.pricing__rates {
+  width: 100%;
+  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.pricing__rates > * {
+  min-width: 33%;
+  max-width: 27.75rem;
+}
+@media (max-width: 61.99875em) {
+  .pricing__rates > * {
+    min-width: calc(50% - 1rem);
+  }
+}
+@media (max-width: 50.875em) {
+  .pricing__rates > * {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+.pricing__rates .rate-card--primary {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+@media (max-width: 61.99875em) {
+  .pricing__rates .rate-card--primary {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@media (max-width: 61.99875em) {
+  .pricing__rates {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 2rem;
+  }
 }
 
 .footer {

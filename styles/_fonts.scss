@@ -86,3 +86,24 @@ $icon-linkedin2: unquote('"\\eaca"');
         content: $icon-linkedin2;
     }
 }
+@font-face {
+    font-family: "Glyphter";
+    src:
+        url("../fonts/Glyphter.woff") format("woff"),
+        url("../fonts/Glyphter.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+[class*="icon-crown-"]:before {
+    display: inline-block;
+    font-family: "Glyphter";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-crown-elegant:before{content:'\0041';}
+.icon-crown-royal:before{content:'\0042';}
+.icon-crown-triangles:before{content:'\0043';}
