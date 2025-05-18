@@ -426,7 +426,8 @@
         content: "";
         width: toRem(88);
         height: toRem(88);
-        background: url("../images/svg-icons/quote-groupe.svg") toRem(-6) center/100% no-repeat;
+        background: url("../images/svg-icons/quote-groupe.svg") center/100% no-repeat;
+        transform: translateX(-6.81%);
         @media (max-width: toEm(479.98)) {
             width: toRem(73);
             height: toRem(66);
