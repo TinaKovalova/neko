@@ -80,7 +80,7 @@
             <div class="menu-burger"></div>
         </header>
         <main class="page">
-            <section class="hero">
+            <!-- <section class="hero">
                 <div class="hero__container">
                     <div class="hero__body">
                         <div class="hero__title-block title-block ">
@@ -549,7 +549,7 @@
                         <div class="swiper-button-next"></div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section class="booking">
                 <div class="booking__container">
                     <div class="booking__title-block title-block title-block--centered">
@@ -565,7 +565,7 @@
                             </p>
                         </div>
                     </div>
-                    <form action="#" method="post" name="booking-form" class="booking__form form-booking">
+                    <form action="#" method="get" name="booking-form" class="booking__form form-booking">
                         <div class="form-booking__row">
                             <div class="form-booking__column">
                                 <lable class="form-booking__lable" id="booking-name">Full Name</lable>
@@ -592,8 +592,8 @@
                         </div>
                         <div class="form-booking__column">
                             <lable class="form-booking__lable" id="booking-date">PICK A DATE</lable>
-                            <input type="date" name="booking-date" id="booking-date" class="form-booking__input"
-                                required>
+                            <input type="datetime-local" name="booking-date" id="booking-date"
+                                class="form-booking__input" required>
                         </div>
                         <div class="form-booking__column">
                             <lable class="form-booking__lable" id="booking-amount">How many pets?</lable>
@@ -602,12 +602,21 @@
                         </div>
                         <div class="form-booking__column">
                             <lable class="form-booking__lable" id="booking-price">purr plan</lable>
-                            <select name="booking-price" id="booking-price" class="form-booking__select" required>
-                                <option value="purr royal" class="form-booking__select-option">Purr royal</option>
-                                <option value="purr ducal" class="form-booking__select-option">Purr Ducal</option>
-                                <option value="purr imperial" class="form-booking__select-option">Purr imperial
-                                </option>
-                            </select>
+                            <input type="text" name="booking-price" id="booking-price" class="form-booking__select"
+                                required>
+                            <div class="form-booking__select-value">Purr Royal</div>
+                            <ul class="form-booking__options">
+                                <li data-option="purr royal" class="form-booking__select-option">
+                                    Purr royal
+                                </li>
+                                <li data-option="purr ducal" class="form-booking__select-option">
+                                    Purr Ducal
+                                </li>
+                                <li data-option="purr imperial" class="form-booking__select-option">
+                                    Purr imperial
+                                </li>
+                            </ul>
+
                         </div>
                         <button class="form-booking__button button" type="submit">BOOK NOW</button>
                     </form>

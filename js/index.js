@@ -9,6 +9,11 @@ function windowLoaded() {
     const menuBurger = document.querySelector(".menu-burger");
     const savedTheme = localStorage.getItem("nekoinn-theme");
     const setPageTheme = (theme) => html.style.setProperty("color-scheme", theme);
+    const select = document.querySelector(".form-booking__column:has(.form-booking__select)");
+    const selectOptions = select?.querySelector(".form-booking__options");
+    const optionsValue = select?.querySelector(".form-booking__select-value"); 
+    const selectInput = select?.querySelector(".form-booking__select"); 
+
     
     //Page theme
     let userTheme;
@@ -41,5 +46,19 @@ function windowLoaded() {
     });
     
 
+    //Select
+    console.log(select);
+    select?.addEventListener('click', (e) => {   
+        selectOptions.classList.toggle("_open");
+        console.log(e.currentTarget);
+    })
+    selectOptions.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (e.target.closest(".form-booking__select-option")) {
+            optionsValue.textContent = e.target.dataset.option;
+            selectInput.value = e.target.dataset.option;
+            selectOptions.classList.remove("_open");
+        }
+    })
 
 }

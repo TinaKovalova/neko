@@ -486,22 +486,21 @@
         text-transform: capitalize;
     }
 }
-.subscription-form {
-    flex-shrink: 1;
-    min-width: toRem(380);
-    @media (max-width: toEm(767.98)) {
-        min-width: 100%;
+
+.form-booking {
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(47);
+    // .form-booking__row
+
+    &__row {
+        display: flex;
+        gap: toRem(47) toRem(20);
     }
-    // .subscription-form__wrapper
 
-    &__wrapper {
-        position: relative;
-        width: 100%;
-    }
+    // .form-booking__lable
 
-    // .subscription-form__label
-
-    &__label {
+    &__lable {
         position: absolute;
         top: toRem(14);
         left: toRem(39);
@@ -511,7 +510,7 @@
         letter-spacing: toRem(3.6);
         text-transform: uppercase;
     }
-    //subscription-form__input
+    //form-booking__input
     &__input {
         min-height: toRem(77);
         padding-inline-start: toRem(39);
@@ -533,6 +532,122 @@
             -webkit-text-fill-color: inherit;
             -webkit-box-shadow: 0 0 0px 1000px $darkBackground inset;
         }
+    }
+    // .form-booking__column
+
+    &__column {
+        flex-grow: 1;
+        position: relative;
+        &:has(.form-booking__select) {
+            @extend .form-booking__input;
+            overflow: visible;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: toRem(26);
+                width: toRem(40);
+                height: toRem(40);
+                background-color: $darkText;
+                mask: url("../images/svg-icons/resize-circle-vertical.svg") center / contain no-repeat;
+                transform: translateY(-50%);
+                cursor: pointer;
+                transition: background-color 0.4s;
+                // @media (any-hover: hover) {
+                //     &:hover {
+                //         background-color: $mainColor;
+                //     }
+                // }
+            }
+        }
+    }
+    // .form-booking__select
+
+    &__select {
+        width: 0;
+        height: 0;
+        padding: 0;
+        border: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        visibility: hidden;
+    }
+    //form-booking__select-value
+    &__select-value {
+        text-transform: capitalize;
+    }
+
+    // .form-booking__options
+
+    &__options {
+        position: absolute;
+        left: 0;
+        top: 110%;
+        width: 100%;
+        background-color: $darkBackground;
+        border-radius: toRem(20);
+        padding-inline-start: toRem(34);
+        padding-block: toRem(10);
+        border: toRem(1) solid $darkText;
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(10);
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: left top;
+        transition:
+            opacity 0.4s,
+            transform 0.4s;
+        &._open {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    //.form-booking__select-option
+    &__select-option {
+        padding-block: toRem(5);
+        padding-inline: toRem(5);
+        border-radius: toRem(5);
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
+    // .form-booking__button
+
+    &__button {
+        align-self: center;
+        min-width: toRem(236);
+        padding-block: toRem(19);
+    }
+}
+.subscription-form {
+    flex-shrink: 1;
+    min-width: toRem(380);
+    @media (max-width: toEm(767.98)) {
+        min-width: 100%;
+    }
+    // .subscription-form__wrapper
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    // .subscription-form__label
+
+    &__label {
+        @extend .form-booking__lable;
+    }
+    //subscription-form__input
+    &__input {
+        @extend .form-booking__input;
     }
     // .subscription-form__button
 
@@ -556,107 +671,5 @@
                 background-color: $primaryColor;
             }
         }
-    }
-}
-
-.form-booking {
-    display: flex;
-    flex-direction: column;
-    row-gap: toRem(47);
-    // .form-booking__row
-
-    &__row {
-        display: flex;
-        gap: toRem(47) toRem(20);
-    }
-
-    // .form-booking__column
-
-    &__column {
-        flex-grow: 1;
-        position: relative;
-        &:has(.form-booking__select) {
-            &:after {
-                position: absolute;
-                top: 50%;
-                right: toRem(26);
-                transform: translateY(-50%);
-                pointer-events: none;
-                content: "";
-                width: toRem(40);
-                height: toRem(40);
-                background: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
-            }
-        }
-    }
-
-    // .form-booking__lable
-
-    &__lable {
-        @extend .subscription-form__label;
-    }
-
-    // .form-booking__input
-
-    &__input {
-        @extend .subscription-form__input;
-    }
-
-    // .form-booking__select
-
-    &__select {
-        @extend .subscription-form__input;
-        padding-inline-end: toRem(90);
-        width: 100%;
-        background-color: transparent;
-        // background: none;
-        // padding: 0;
-        &,
-        &::picker(select) {
-            appearance: base-select;
-        }
-        &::picker(select) {
-            top: calc(anchor(bottom) + toRem(8));
-            border: none;
-            padding-inline: toRem(39);
-            padding-block: toRem(15);
-            border-radius: toRem(20);
-            border: toRem(1) solid $subtitleColor;
-            transition: opacity 0.4s ease-in-out;
-        }
-        &::picker-icon {
-            display: none;
-        }
-        &:not(:open)::picker(select) {
-            opacity: 0;
-        }
-
-        &:open::picker(select) {
-            opacity: 1;
-        }
-    }
-
-    // .form-booking__select-option
-
-    &__select-option {
-        padding-inline: toRem(10);
-        padding-block: toRem(8);
-        border-radius: toRem(20);
-        place-items: initial;
-        &::checkmark {
-            display: none;
-        }
-        &:hover,
-        &:focus-visible {
-            background-color: $lightText;
-        }
-    }
-
-    // .form-booking__button
-
-    &__button {
-        align-self: center;
-        min-width: toRem(236);
-        padding-block: toRem(19);
     }
 }
