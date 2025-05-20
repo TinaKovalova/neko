@@ -331,6 +331,8 @@ body:has(.menu-burger.active) {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  row-gap: 1.125rem;
+  max-width: 54.25rem;
 }
 .title-block__subtitle {
   font-size: 0.75rem;
@@ -338,6 +340,9 @@ body:has(.menu-burger.active) {
   text-transform: uppercase;
   font-weight: 700;
   color: #696969;
+}
+.title-block--centered .title-block__subtitle:not(:last-child) {
+  margin-bottom: 0.3125rem;
 }
 @media (max-width: 47.99875em) {
   .title-block__subtitle {
@@ -776,6 +781,165 @@ body:has(.menu-burger.active) {
   font-size: 1rem;
   font-weight: 700;
   text-transform: capitalize;
+}
+
+.subscription-form {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  min-width: 23.75rem;
+}
+@media (max-width: 47.99875em) {
+  .subscription-form {
+    min-width: 100%;
+  }
+}
+.subscription-form__wrapper {
+  position: relative;
+  width: 100%;
+}
+.subscription-form__label, .form-booking__lable {
+  position: absolute;
+  top: 0.875rem;
+  left: 2.4375rem;
+  color: #696969;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.225rem;
+  text-transform: uppercase;
+}
+.subscription-form__input, .form-booking__select, .form-booking__input {
+  min-height: 4.8125rem;
+  -webkit-padding-start: 2.4375rem;
+          padding-inline-start: 2.4375rem;
+  -webkit-padding-before: 2.4375rem;
+          padding-block-start: 2.4375rem;
+  -webkit-padding-end: 6rem;
+          padding-inline-end: 6rem;
+  padding-bottom: 0.875rem;
+  font-size: 1rem;
+  vertical-align: bottom;
+  border-radius: 2.5rem;
+  border: 0.0625rem solid #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.subscription-form__input:-webkit-autofill, .form-booking__select:-webkit-autofill, .form-booking__input:-webkit-autofill, .subscription-form__input:-webkit-autofill:hover, .subscription-form__input:-webkit-autofill:focus, .subscription-form__input:-webkit-autofill:active {
+  border: 0.0625rem solid inherit;
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0px 1000px #161616 inset;
+}
+.subscription-form__button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1.3125rem;
+  width: 3.375rem;
+  height: 3.375rem;
+  border-radius: 50%;
+  background-color: #c75e90;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+.subscription-form__button img {
+  width: 2.25rem;
+}
+@media (any-hover: hover) {
+  .subscription-form__button:hover {
+    background-color: #8e345f;
+  }
+}
+
+.form-booking {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2.9375rem;
+}
+.form-booking__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.9375rem 1.25rem;
+}
+.form-booking__column {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  position: relative;
+}
+.form-booking__column:has(.form-booking__select):after {
+  position: absolute;
+  top: 50%;
+  right: 1.625rem;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  pointer-events: none;
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
+}
+.form-booking__select {
+  -webkit-padding-end: 5.625rem;
+          padding-inline-end: 5.625rem;
+  width: 100%;
+  background-color: transparent;
+}
+.form-booking__select, .form-booking__select::picker(select) {
+  -webkit-appearance: base-select;
+     -moz-appearance: base-select;
+          appearance: base-select;
+}
+.form-booking__select::picker(select) {
+  top: calc(anchor(bottom) + 0.5rem);
+  border: none;
+  padding-inline: 2.4375rem;
+  padding-block: 0.9375rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #696969;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+.form-booking__select::picker-icon {
+  display: none;
+}
+.form-booking__select:not(:open)::picker(select) {
+  opacity: 0;
+}
+.form-booking__select:open::picker(select) {
+  opacity: 1;
+}
+.form-booking__select-option {
+  padding-inline: 0.625rem;
+  padding-block: 0.5rem;
+  border-radius: 1.25rem;
+  place-items: initial;
+}
+.form-booking__select-option::checkmark {
+  display: none;
+}
+.form-booking__select-option:hover, .form-booking__select-option:focus-visible {
+  background-color: #232323;
+}
+.form-booking__button {
+  -ms-flex-item-align: center;
+      align-self: center;
+  min-width: 14.75rem;
+  padding-block: 1.1875rem;
 }
 
 .header {
@@ -1876,13 +2040,6 @@ body:has(.menu-burger.active) {
 }
 .pricing__title-block {
   max-width: 40.375rem;
-  row-gap: 1.125rem;
-}
-.pricing__title-block .title-block__subtitle:not(:last-child) {
-  margin-bottom: 0.1875rem;
-}
-.pricing__title-block .title-block__title {
-  font-size: 2.5rem;
 }
 .pricing__rates {
   width: 100%;
@@ -1950,13 +2107,6 @@ body:has(.menu-burger.active) {
           align-items: center;
   row-gap: 5.1875rem;
 }
-.reviews__title-block {
-  row-gap: 1.125rem;
-  max-width: 54.25rem;
-}
-.reviews__title-block .title-block__subtitle:not(:last-child) {
-  margin-bottom: 0.3125rem;
-}
 .reviews__swiper {
   width: 100%;
   position: relative;
@@ -1980,6 +2130,30 @@ body:has(.menu-burger.active) {
     width: 100%;
     height: auto;
   }
+}
+
+.booking__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 4.375rem;
+  border-radius: 2.5rem;
+  -webkit-padding-before: 6.0625rem;
+          padding-block-start: 6.0625rem;
+  -webkit-padding-after: 5.375rem;
+          padding-block-end: 5.375rem;
+  background-color: light-dark(#ffffff, #161616);
+}
+.booking__form {
+  width: 100%;
+  padding-inline: 6.9375rem;
 }
 
 .footer {
@@ -2200,7 +2374,7 @@ body:has(.menu-burger.active) {
   position: relative;
   width: 100%;
 }
-.subscription-form__label {
+.subscription-form__label, .form-booking__lable {
   position: absolute;
   top: 0.875rem;
   left: 2.4375rem;
@@ -2210,7 +2384,7 @@ body:has(.menu-burger.active) {
   letter-spacing: 0.225rem;
   text-transform: uppercase;
 }
-.subscription-form__input {
+.subscription-form__input, .form-booking__input, .form-booking__select {
   min-height: 4.8125rem;
   -webkit-padding-start: 2.4375rem;
           padding-inline-start: 2.4375rem;
@@ -2227,7 +2401,7 @@ body:has(.menu-burger.active) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.subscription-form__input:-webkit-autofill, .subscription-form__input:-webkit-autofill:hover, .subscription-form__input:-webkit-autofill:focus, .subscription-form__input:-webkit-autofill:active {
+.subscription-form__input:-webkit-autofill, .form-booking__input:-webkit-autofill, .form-booking__select:-webkit-autofill, .subscription-form__input:-webkit-autofill:hover, .subscription-form__input:-webkit-autofill:focus, .subscription-form__input:-webkit-autofill:active {
   border: 0.0625rem solid inherit;
   -webkit-text-fill-color: inherit;
   -webkit-box-shadow: 0 0 0px 1000px #161616 inset;

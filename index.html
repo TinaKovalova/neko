@@ -550,6 +550,69 @@
                     </div>
                 </div>
             </section>
+            <section class="booking">
+                <div class="booking__container">
+                    <div class="booking__title-block title-block title-block--centered">
+                        <div class="title-block__subtitle">Secure Your Cat's Stay Today</div>
+                        <h2 class="title-block__title">Book Now</h2>
+                        <div class="title-block__text">
+                            <p>
+                                Ready to reserve your cat's spot at NekoInn? Our easy-to-use booking system makes it
+                                simple to schedule your cat's stay
+                                with us. Just select your desired dates, choose from our range of accommodations and
+                                services, and complete your
+                                reservation in a few easy steps.
+                            </p>
+                        </div>
+                    </div>
+                    <form action="#" method="post" name="booking-form" class="booking__form form-booking">
+                        <div class="form-booking__row">
+                            <div class="form-booking__column">
+                                <lable class="form-booking__lable" id="booking-name">Full Name</lable>
+                                <input type="text" name="booking-name" id="booking-name" class="form-booking__input"
+                                    required>
+                            </div>
+                            <div class="form-booking__column">
+                                <lable class="form-booking__lable" for="booking-email">EMAIL</lable>
+                                <input type="email" name="booking-email" id="booking-email" class="form-booking__input"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-booking__row">
+                            <div class="form-booking__column">
+                                <lable class="form-booking__lable" id="booking-phone">PHONE NUMBER</lable>
+                                <input type="tel" name="booking-phone" id="booking-phone" class="form-booking__input"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                            </div>
+                            <div class="form-booking__column">
+                                <lable class="form-booking__lable" id="booking-cat-name">CAT NAME</lable>
+                                <input type="text" name="booking-cat-name" id="booking-cat-name"
+                                    class="form-booking__input" required>
+                            </div>
+                        </div>
+                        <div class="form-booking__column">
+                            <lable class="form-booking__lable" id="booking-date">PICK A DATE</lable>
+                            <input type="date" name="booking-date" id="booking-date" class="form-booking__input"
+                                required>
+                        </div>
+                        <div class="form-booking__column">
+                            <lable class="form-booking__lable" id="booking-amount">How many pets?</lable>
+                            <input type="number" name="booking-amount" id="booking-amount" class="form-booking__input"
+                                required>
+                        </div>
+                        <div class="form-booking__column">
+                            <lable class="form-booking__lable" id="booking-price">purr plan</lable>
+                            <select name="booking-price" id="booking-price" class="form-booking__select" required>
+                                <option value="purr royal" class="form-booking__select-option">Purr royal</option>
+                                <option value="purr ducal" class="form-booking__select-option">Purr Ducal</option>
+                                <option value="purr imperial" class="form-booking__select-option">Purr imperial
+                                </option>
+                            </select>
+                        </div>
+                        <button class="form-booking__button button" type="submit">BOOK NOW</button>
+                    </form>
+                </div>
+            </section>
         </main>
         <footer class="footer">
             <div class="footer__container">
