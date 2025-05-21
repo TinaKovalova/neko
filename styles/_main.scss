@@ -328,6 +328,7 @@
 }
 //About section----------------------------
 .about {
+    scroll-margin-top: var(--scrooll-margin-top);
     // .about__container
 
     &__container {
@@ -430,6 +431,7 @@
 }
 //Our rooms section----------------------------
 .our-rooms {
+    scroll-margin-top: var(--scrooll-margin-top);
     padding-block-start: toRem(80);
     padding-block-end: toRem(66);
     // .our-rooms__container
@@ -555,6 +557,7 @@
 }
 //Care section----------------------------
 .care {
+    scroll-margin-top: var(--scrooll-margin-top);
     $gap: 21;
     //care__wrapper
     &__wrapper {
@@ -731,6 +734,7 @@
 }
 //Reviews section----------------------------
 .reviews {
+    scroll-margin-top: var(--scrooll-margin-top);
     // .reviews__container
 
     &__container {

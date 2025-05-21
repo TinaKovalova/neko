@@ -4,6 +4,7 @@ window.addEventListener("load", windowLoaded);
 function windowLoaded() {
     const themeCheckBox = document.querySelector(".theme-form__input");
     const html = document.documentElement;
+    const header = document.querySelector('.header');
     const burgerButton = document.querySelector(".burger-btn");
     // const closeBurgerMenuButton = document.querySelector(".burger-btn-close");
     const menuBurger = document.querySelector(".menu-burger");
@@ -21,7 +22,7 @@ function windowLoaded() {
           .join(" ");
        
     
-
+    html.style.setProperty("--scrooll-margin-top", `${header.clientHeight}px`);
     
     //Page theme
     let userTheme;

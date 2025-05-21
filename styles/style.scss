@@ -3,9 +3,11 @@
 @import "reset";
 @import "variables";
 @import "mixins";
+
 html {
     scroll-behavior: smooth;
     color-scheme: light dark;
+    --scrooll-margin-top: 0;
 }
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     background: none;
