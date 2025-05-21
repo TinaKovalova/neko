@@ -491,13 +491,30 @@
     display: flex;
     flex-direction: column;
     row-gap: toRem(47);
+    @media (max-width: toEm(427.98)) {
+        row-gap: toRem(20);
+    }
     // .form-booking__row
 
     &__row {
         display: flex;
+        flex-wrap: wrap;
         gap: toRem(47) toRem(20);
+        @media (max-width: toEm(427.98)) {
+            row-gap: toRem(20);
+        }
     }
 
+    // .form-booking__column
+
+    &__column {
+        flex-grow: 1;
+        position: relative;
+        min-width: toRem(316);
+        @media (max-width: toEm(467.98)) {
+            min-width: 100%;
+        }
+    }
     // .form-booking__lable
 
     &__lable {
@@ -513,9 +530,8 @@
     //form-booking__input
     &__input {
         min-height: toRem(77);
-        padding-inline-start: toRem(39);
+        padding-inline: toRem(39);
         padding-block-start: toRem(39);
-        padding-inline-end: toRem(96);
         padding-bottom: toRem(14);
         font-size: toRem(16);
         vertical-align: bottom;
@@ -532,12 +548,15 @@
             -webkit-text-fill-color: inherit;
             -webkit-box-shadow: 0 0 0px 1000px $darkBackground inset;
         }
-    }
-    // .form-booking__column
-
-    &__column {
-        flex-grow: 1;
-        position: relative;
+        &--select {
+            padding-inline-end: toRem(96);
+            @media (max-width: toEm(747.98)) {
+                padding-inline-end: toRem(71);
+            }
+        }
+        @media (max-width: toEm(747.98)) {
+            padding-inline: toRem(31);
+        }
     }
     //form-booking__input-button
     &__input-button {
@@ -552,6 +571,9 @@
         &--select {
             background-color: $darkText;
             mask: url("../images/svg-icons/resize-circle-vertical.svg") center / contain no-repeat;
+        }
+        @media (max-width: toEm(747.98)) {
+            right: toRem(13);
         }
         @media (any-hover: hover) {
             &:hover {
@@ -617,6 +639,9 @@
         align-self: center;
         min-width: toRem(236);
         padding-block: toRem(19);
+        @media (max-width: toEm(467.98)) {
+            min-width: 100%;
+        }
     }
 }
 .subscription-form {

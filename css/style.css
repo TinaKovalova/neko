@@ -814,11 +814,35 @@ body:has(.menu-burger.active) {
           flex-direction: column;
   row-gap: 2.9375rem;
 }
+@media (max-width: 26.74875em) {
+  .form-booking {
+    row-gap: 1.25rem;
+  }
+}
 .form-booking__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 2.9375rem 1.25rem;
+}
+@media (max-width: 26.74875em) {
+  .form-booking__row {
+    row-gap: 1.25rem;
+  }
+}
+.form-booking__column {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  position: relative;
+  min-width: 19.75rem;
+}
+@media (max-width: 29.24875em) {
+  .form-booking__column {
+    min-width: 100%;
+  }
 }
 .form-booking__lable, .subscription-form__label {
   position: absolute;
@@ -832,12 +856,9 @@ body:has(.menu-burger.active) {
 }
 .form-booking__input, .subscription-form__input {
   min-height: 4.8125rem;
-  -webkit-padding-start: 2.4375rem;
-          padding-inline-start: 2.4375rem;
+  padding-inline: 2.4375rem;
   -webkit-padding-before: 2.4375rem;
           padding-block-start: 2.4375rem;
-  -webkit-padding-end: 6rem;
-          padding-inline-end: 6rem;
   padding-bottom: 0.875rem;
   font-size: 1rem;
   vertical-align: bottom;
@@ -852,11 +873,20 @@ body:has(.menu-burger.active) {
   -webkit-text-fill-color: inherit;
   -webkit-box-shadow: 0 0 0px 1000px #161616 inset;
 }
-.form-booking__column {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  position: relative;
+.form-booking__input--select {
+  -webkit-padding-end: 6rem;
+          padding-inline-end: 6rem;
+}
+@media (max-width: 46.74875em) {
+  .form-booking__input--select {
+    -webkit-padding-end: 4.4375rem;
+            padding-inline-end: 4.4375rem;
+  }
+}
+@media (max-width: 46.74875em) {
+  .form-booking__input, .subscription-form__input {
+    padding-inline: 1.9375rem;
+  }
 }
 .form-booking__input-button {
   position: absolute;
@@ -875,6 +905,11 @@ body:has(.menu-burger.active) {
   background-color: #ffffff;
   -webkit-mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
           mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
+}
+@media (max-width: 46.74875em) {
+  .form-booking__input-button {
+    right: 0.8125rem;
+  }
 }
 @media (any-hover: hover) {
   .form-booking__input-button:hover {
@@ -943,6 +978,11 @@ body:has(.menu-burger.active) {
       align-self: center;
   min-width: 14.75rem;
   padding-block: 1.1875rem;
+}
+@media (max-width: 29.24875em) {
+  .form-booking__button {
+    min-width: 100%;
+  }
 }
 
 .subscription-form {
@@ -2139,8 +2179,6 @@ body:has(.menu-burger.active) {
 .reviews__container {
   -webkit-padding-before: 3.5rem;
           padding-block-start: 3.5rem;
-  -webkit-padding-after: 4.875rem;
-          padding-block-end: 4.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2179,6 +2217,16 @@ body:has(.menu-burger.active) {
 }
 
 .booking__container {
+  -webkit-padding-before: 4.875rem;
+          padding-block-start: 4.875rem;
+}
+@media (max-width: 61.99875em) {
+  .booking__container {
+    -webkit-padding-before: 3.5rem;
+            padding-block-start: 3.5rem;
+  }
+}
+.booking__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2196,10 +2244,23 @@ body:has(.menu-burger.active) {
   -webkit-padding-after: 5.375rem;
           padding-block-end: 5.375rem;
   background-color: light-dark(#ffffff, #161616);
+  padding-inline: 6.9375rem;
+}
+@media (max-width: 61.99875em) {
+  .booking__body {
+    padding-inline: 1.9375rem;
+    row-gap: 3.0625rem;
+    -webkit-padding-before: 3.9375rem;
+            padding-block-start: 3.9375rem;
+  }
+}
+@media (max-width: 26.74875em) {
+  .booking__body {
+    padding-inline: 0.625rem;
+  }
 }
 .booking__form {
   width: 100%;
-  padding-inline: 6.9375rem;
 }
 
 .footer {

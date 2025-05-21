@@ -735,7 +735,6 @@
 
     &__container {
         padding-block-start: toRem(56);
-        padding-block-end: toRem(78);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -792,6 +791,13 @@
     // .booking__container
 
     &__container {
+        padding-block-start: toRem(78);
+        @media (max-width: toEm(991.98)) {
+            padding-block-start: toRem(56);
+        }
+    }
+    //booking__body
+    &__body {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -800,6 +806,15 @@
         padding-block-start: toRem(97);
         padding-block-end: toRem(86);
         background-color: light-dark($darkText, $darkBackground);
+        padding-inline: toRem(111);
+        @media (max-width: toEm(991.98)) {
+            padding-inline: toRem(31);
+            row-gap: toRem(49);
+            padding-block-start: toRem(63);
+        }
+        @media (max-width: toEm(427.98)) {
+            padding-inline: toRem(10);
+        }
     }
 
     // .booking__title-block
@@ -811,6 +826,5 @@
 
     &__form {
         width: 100%;
-        padding-inline: toRem(111);
     }
 }
