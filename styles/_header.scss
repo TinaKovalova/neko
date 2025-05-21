@@ -6,7 +6,7 @@
     padding-block-start: toRem(40);
     background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
     @media (max-width: toEm(991.98)) {
-        padding-block-start: toRem(34);
+        padding-block-start: toRem(20);
     }
 
     // .header__container
@@ -223,13 +223,12 @@
     }
 }
 .menu-burger {
-    height: 100svh;
+    height: 100dvh;
     max-width: 100%;
     border-end-start-radius: toRem(60);
     border-start-start-radius: toRem(60);
     padding-inline: toRem(32);
-    padding-block-start: toRem(33);
-    padding-block-end: toRem(88);
+    padding-block: toRem(33);
     position: fixed;
     top: 0;
     left: 100%;

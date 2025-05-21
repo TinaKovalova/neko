@@ -675,6 +675,9 @@
         flex-direction: column;
         align-items: center;
         row-gap: toRem(75);
+        @media (max-width: toEm(991.98)) {
+            padding-block-end: toRem(17);
+        }
     }
 
     // .pricing__title-block
@@ -798,8 +801,7 @@
         padding-block-start: toRem(78);
         padding-block-end: toRem(122);
         @media (max-width: toEm(991.98)) {
-            padding-block-start: toRem(56);
-            padding-block-end: toRem(56);
+            padding-block: toRem(56);
         }
     }
     //booking__body

@@ -121,8 +121,7 @@
     padding-block-end: toRem(67);
 
     @media (max-width: toEm(991.98)) {
-        padding-block-start: toRem(86);
-        padding-block-end: toRem(58);
+        padding-block: toRem(58);
         flex-wrap: wrap;
     }
     // .subscription__header
