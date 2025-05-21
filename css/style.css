@@ -830,7 +830,7 @@ body:has(.menu-burger.active) {
   letter-spacing: 0.225rem;
   text-transform: uppercase;
 }
-.form-booking__input, .subscription-form__input, .form-booking__column:has(.form-booking__select) {
+.form-booking__input, .subscription-form__input {
   min-height: 4.8125rem;
   -webkit-padding-start: 2.4375rem;
           padding-inline-start: 2.4375rem;
@@ -847,7 +847,7 @@ body:has(.menu-burger.active) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.form-booking__input:-webkit-autofill, .subscription-form__input:-webkit-autofill, .form-booking__column:-webkit-autofill:has(.form-booking__select), .form-booking__input:-webkit-autofill:hover, .form-booking__input:-webkit-autofill:focus, .form-booking__input:-webkit-autofill:active {
+.form-booking__input:-webkit-autofill, .subscription-form__input:-webkit-autofill, .form-booking__input:-webkit-autofill:hover, .form-booking__input:-webkit-autofill:focus, .form-booking__input:-webkit-autofill:active {
   border: 0.0625rem solid inherit;
   -webkit-text-fill-color: inherit;
   -webkit-box-shadow: 0 0 0px 1000px #161616 inset;
@@ -858,19 +858,12 @@ body:has(.menu-burger.active) {
           flex-grow: 1;
   position: relative;
 }
-.form-booking__column:has(.form-booking__select) {
-  overflow: visible;
-}
-.form-booking__column:has(.form-booking__select)::before {
-  content: "";
+.form-booking__input-button {
   position: absolute;
   top: 50%;
   right: 1.625rem;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #ffffff;
-  -webkit-mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
-          mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -878,17 +871,20 @@ body:has(.menu-burger.active) {
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
 }
-.form-booking__select {
-  width: 0;
-  height: 0;
-  padding: 0;
-  border: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
-  visibility: hidden;
+.form-booking__input-button--select {
+  background-color: #ffffff;
+  -webkit-mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
+          mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
 }
-.form-booking__select-value {
+@media (any-hover: hover) {
+  .form-booking__input-button:hover {
+    background-color: rebeccapurple;
+  }
+  .form-booking__input-button--select:hover {
+    background-color: #c75e90;
+  }
+}
+.form-booking__select.form-booking__select--select {
   text-transform: capitalize;
 }
 .form-booking__options {

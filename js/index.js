@@ -9,10 +9,18 @@ function windowLoaded() {
     const menuBurger = document.querySelector(".menu-burger");
     const savedTheme = localStorage.getItem("nekoinn-theme");
     const setPageTheme = (theme) => html.style.setProperty("color-scheme", theme);
-    const select = document.querySelector(".form-booking__column:has(.form-booking__select)");
+    const select = document.querySelector(".form-booking__column:has(.form-booking__input--select)");
     const selectOptions = select?.querySelector(".form-booking__options");
-    const optionsValue = select?.querySelector(".form-booking__select-value"); 
-    const selectInput = select?.querySelector(".form-booking__select"); 
+    const selectInput = select?.querySelector(".form-booking__input--select"); 
+
+    const capitalizeText=(text)=>text.split(" ").map((el) => {
+            const wordArray = [...el];
+            wordArray.splice(0, 1, wordArray[0].toUpperCase());
+            return wordArray.join("");
+          })
+          .join(" ");
+       
+    
 
     
     //Page theme
@@ -47,18 +55,40 @@ function windowLoaded() {
     
 
     //Select
-    console.log(select);
+    
     select?.addEventListener('click', (e) => {   
+        console.log(e);
         selectOptions.classList.toggle("_open");
-        console.log(e.currentTarget);
     })
+
+    select.addEventListener("focusin", (e) => {
+        console.log(e);
+        if (!e.target.closest(".form-booking__input-button")) {
+            selectOptions.classList.add("_open");
+        }
+         
+    });
+    select.addEventListener("focusout", (e) => {
+        console.log(e);
+      selectOptions.classList.remove("_open");
+    });
+    
     selectOptions.addEventListener("click", (e) => {
+        console.log(e);
         e.stopPropagation();
         if (e.target.closest(".form-booking__select-option")) {
-            optionsValue.textContent = e.target.dataset.option;
-            selectInput.value = e.target.dataset.option;
+            selectInput.value = capitalizeText(e.target.dataset.option); 
             selectOptions.classList.remove("_open");
         }
     })
+    selectOptions.addEventListener("keydown", (e) => {
+        console.log(e)
+      if (e.target.closest(".form-booking__select-option") && e.keyCode == 13) {
+          selectInput.value = capitalizeText(e.target.dataset.option);
+          selectOptions.classList.remove("_open");
+      }
+    });
+
+
 
 }

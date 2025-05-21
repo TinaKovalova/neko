@@ -538,44 +538,36 @@
     &__column {
         flex-grow: 1;
         position: relative;
-        &:has(.form-booking__select) {
-            @extend .form-booking__input;
-            overflow: visible;
-            &::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                right: toRem(26);
-                width: toRem(40);
-                height: toRem(40);
-                background-color: $darkText;
-                mask: url("../images/svg-icons/resize-circle-vertical.svg") center / contain no-repeat;
-                transform: translateY(-50%);
-                cursor: pointer;
-                transition: background-color 0.4s;
-                // @media (any-hover: hover) {
-                //     &:hover {
-                //         background-color: $mainColor;
-                //     }
-                // }
+    }
+    //form-booking__input-button
+    &__input-button {
+        position: absolute;
+        top: 50%;
+        right: toRem(26);
+        width: toRem(40);
+        height: toRem(40);
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: background-color 0.4s;
+        &--select {
+            background-color: $darkText;
+            mask: url("../images/svg-icons/resize-circle-vertical.svg") center / contain no-repeat;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: rebeccapurple;
+            }
+            &--select:hover {
+                background-color: $mainColor;
             }
         }
     }
     // .form-booking__select
 
     &__select {
-        width: 0;
-        height: 0;
-        padding: 0;
-        border: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        visibility: hidden;
-    }
-    //form-booking__select-value
-    &__select-value {
-        text-transform: capitalize;
+        &.form-booking__select--select {
+            text-transform: capitalize;
+        }
     }
 
     // .form-booking__options

@@ -565,7 +565,7 @@
                             </p>
                         </div>
                     </div>
-                    <form action="#" method="get" name="booking-form" class="booking__form form-booking">
+                    <form action="#" method="post" name="booking-form" class="booking__form form-booking">
                         <div class="form-booking__row">
                             <div class="form-booking__column">
                                 <lable class="form-booking__lable" id="booking-name">Full Name</lable>
@@ -602,21 +602,21 @@
                         </div>
                         <div class="form-booking__column">
                             <lable class="form-booking__lable" id="booking-price">purr plan</lable>
-                            <input type="text" name="booking-price" id="booking-price" class="form-booking__select"
-                                required>
-                            <div class="form-booking__select-value">Purr Royal</div>
+                            <input type="text" name="booking-price" id="booking-price"
+                                class="form-booking__input form-booking__input--select" required value="Purr royal">
                             <ul class="form-booking__options">
-                                <li data-option="purr royal" class="form-booking__select-option">
+                                <li data-option="purr royal" class="form-booking__select-option" tabindex="0">
                                     Purr royal
                                 </li>
-                                <li data-option="purr ducal" class="form-booking__select-option">
+                                <li data-option="purr ducal" class="form-booking__select-option" tabindex="0">
                                     Purr Ducal
                                 </li>
-                                <li data-option="purr imperial" class="form-booking__select-option">
+                                <li data-option="purr imperial" class="form-booking__select-option" tabindex="0">
                                     Purr imperial
                                 </li>
                             </ul>
-
+                            <button type="button"
+                                class="form-booking__input-button form-booking__input-button--select"></button>
                         </div>
                         <button class="form-booking__button button" type="submit">BOOK NOW</button>
                     </form>
