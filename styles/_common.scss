@@ -554,6 +554,10 @@
                 padding-inline-end: toRem(71);
             }
         }
+        &:focus-within {
+            color: inherit;
+            background-color: inherit;
+        }
         @media (max-width: toEm(747.98)) {
             padding-inline: toRem(31);
         }

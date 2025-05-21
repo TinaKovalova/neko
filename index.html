@@ -80,7 +80,7 @@
             <div class="menu-burger"></div>
         </header>
         <main class="page">
-            <section class="hero">
+            <!-- <section class="hero">
                 <div class="hero__container">
                     <div class="hero__body">
                         <div class="hero__title-block title-block ">
@@ -549,7 +549,7 @@
                         <div class="swiper-button-next"></div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section class="booking">
                 <div class="booking__container">
                     <div class="booking__body">
@@ -604,7 +604,8 @@
                             <div class="form-booking__column">
                                 <lable class="form-booking__lable" id="booking-price">purr plan</lable>
                                 <input type="text" name="booking-price" id="booking-price"
-                                    class="form-booking__input form-booking__input--select" required value="Purr royal">
+                                    class="form-booking__input form-booking__input--select" required value="Purr royal"
+                                    readonly>
                                 <ul class="form-booking__options">
                                     <li data-option="purr royal" class="form-booking__select-option" tabindex="0">
                                         Purr royal
@@ -616,7 +617,7 @@
                                         Purr imperial
                                     </li>
                                 </ul>
-                                <button type="button"
+                                <button type="button" tabindex="-1"
                                     class="form-booking__input-button form-booking__input-button--select"></button>
                             </div>
                             <button class="form-booking__button button" type="submit">BOOK NOW</button>

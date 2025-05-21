@@ -884,6 +884,10 @@ body:has(.menu-burger.active) {
             padding-inline-end: 4.4375rem;
   }
 }
+.form-booking__input:focus-within, .subscription-form__input:focus-within {
+  color: inherit;
+  background-color: inherit;
+}
 @media (max-width: 46.74875em) {
   .form-booking__input, .subscription-form__input {
     padding-inline: 1.9375rem;
