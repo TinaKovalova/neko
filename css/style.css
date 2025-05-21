@@ -2257,6 +2257,8 @@ body:has(.menu-burger.active) {
   .booking__container {
     -webkit-padding-before: 3.5rem;
             padding-block-start: 3.5rem;
+    -webkit-padding-after: 3.5rem;
+            padding-block-end: 3.5rem;
   }
 }
 .booking__body {
