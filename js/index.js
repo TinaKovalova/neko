@@ -54,6 +54,27 @@ function windowLoaded() {
     });
     
 
+
+    // Datetime
+    const dateBlock = document.querySelector('.form-booking__column:has(.form-booking__input[type="datetime-local"])');
+   
+    dateBlock?.addEventListener("mousedown", (e) => {
+        console.log(e.currentTarget)
+
+        if (dateBlock.classList.contains("._show-picker")) {
+            console.log("blur()");
+            dateBlock.classList.remove("._show-picker");
+            dateBlock.blur();
+        } else {
+            console.log("showPicker()");
+            dateBlock.classList.add("._show-picker");
+            dateBlock.querySelector(".form-booking__input").showPicker();
+        }
+          
+
+    });
+
+
     //Select
     
 

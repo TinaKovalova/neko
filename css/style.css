@@ -245,6 +245,7 @@ input[type=datetime-local]::-webkit-calendar-picker-indicator {
   height: 100%;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -904,6 +905,7 @@ body:has(.menu-burger.active) {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+  border-radius: 50%;
   cursor: pointer;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
@@ -913,9 +915,18 @@ body:has(.menu-burger.active) {
   -webkit-mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
           mask: url("../images/svg-icons/resize-circle-vertical.svg") center/contain no-repeat;
 }
+.form-booking__input-button--date {
+  width: 3.375rem;
+  height: 3.375rem;
+  background: url("../images/svg-icons/calendar.svg") center/64% no-repeat, #c75e90;
+}
 @media (max-width: 46.74875em) {
   .form-booking__input-button {
     right: 0.8125rem;
+  }
+  .form-booking__input-button--date {
+    width: 3.125rem;
+    height: 3.125rem;
   }
 }
 @media (any-hover: hover) {
@@ -924,6 +935,9 @@ body:has(.menu-burger.active) {
   }
   .form-booking__input-button--select:hover {
     background-color: #c75e90;
+  }
+  .form-booking__input-button--date:hover {
+    background-color: #8e345f;
   }
 }
 .form-booking__select.form-booking__select--select {

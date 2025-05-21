@@ -542,6 +542,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
         &:-webkit-autofill,
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
@@ -550,6 +551,7 @@
             -webkit-text-fill-color: inherit;
             -webkit-box-shadow: 0 0 0px 1000px $darkBackground inset;
         }
+
         &--select {
             padding-inline-end: toRem(96);
             @media (max-width: toEm(747.98)) {
@@ -572,14 +574,27 @@
         width: toRem(40);
         height: toRem(40);
         transform: translateY(-50%);
+        border-radius: 50%;
         cursor: pointer;
         transition: background-color 0.4s;
+
         &--select {
             background-color: $darkText;
             mask: url("../images/svg-icons/resize-circle-vertical.svg") center / contain no-repeat;
         }
+        &--date {
+            width: toRem(54);
+            height: toRem(54);
+            background:
+                url("../images/svg-icons/calendar.svg") center / 64% no-repeat,
+                $mainColor;
+        }
         @media (max-width: toEm(747.98)) {
             right: toRem(13);
+            &--date {
+                width: toRem(50);
+                height: toRem(50);
+            }
         }
         @media (any-hover: hover) {
             &:hover {
@@ -587,6 +602,9 @@
             }
             &--select:hover {
                 background-color: $mainColor;
+            }
+            &--date:hover {
+                background-color: $primaryColor;
             }
         }
     }
