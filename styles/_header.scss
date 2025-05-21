@@ -3,10 +3,11 @@
     z-index: 100;
     top: 0;
     width: 100%;
-    padding-block-start: toRem(40);
+    padding-block-start: toRem(20);
     background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
+    backdrop-filter: blur(toRem(10));
     @media (max-width: toEm(991.98)) {
-        padding-block-start: toRem(20);
+        padding-block-start: toRem(15);
     }
 
     // .header__container
