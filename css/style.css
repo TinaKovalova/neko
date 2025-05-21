@@ -814,6 +814,7 @@ body:has(.menu-burger.active) {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 2.9375rem;
+  color: light-dark(#232323, #ffffff);
 }
 @media (max-width: 26.74875em) {
   .form-booking {
@@ -865,6 +866,7 @@ body:has(.menu-burger.active) {
   vertical-align: bottom;
   border-radius: 2.5rem;
   border: 0.0625rem solid #ffffff;
+  border-color: light-dark(#b7b7b7, #ffffff);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2234,6 +2236,8 @@ body:has(.menu-burger.active) {
 .booking__container {
   -webkit-padding-before: 4.875rem;
           padding-block-start: 4.875rem;
+  -webkit-padding-after: 7.625rem;
+          padding-block-end: 7.625rem;
 }
 @media (max-width: 61.99875em) {
   .booking__container {

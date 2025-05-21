@@ -796,6 +796,7 @@
 
     &__container {
         padding-block-start: toRem(78);
+        padding-block-end: toRem(122);
         @media (max-width: toEm(991.98)) {
             padding-block-start: toRem(56);
         }
