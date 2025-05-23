@@ -1,8 +1,14 @@
 //Hero section----------------------------
 .hero {
+    padding-block-start: var(--scrooll-margin-top);
     border-end-start-radius: toRem(60);
     border-end-end-radius: toRem(60);
-    background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
+    .dark & {
+        background: $darkBackground;
+    }
+    .light & {
+        background: $ligthGradient;
+    }
 
     // .hero__container
 
@@ -102,7 +108,6 @@
         padding-block-end: toRem(95);
         padding-inline-start: toRem(77);
         padding-inline-end: toRem(29);
-
         position: relative;
         &::before,
         &::after {
@@ -145,8 +150,6 @@
     &__image-wrapper {
         flex-shrink: 1;
         position: relative;
-        // width: toRem(566);
-        // height: toRem(557);
         width: toPecent(566, 671);
         height: 100%;
 
@@ -244,7 +247,12 @@
         justify-content: space-between;
         row-gap: toRem(46);
         border-radius: toRem(40);
-        background-color: light-dark($lightText, $mainColor);
+        .dark & {
+            background-color: $mainColor;
+        }
+        .light & {
+            background-color: $lightText;
+        }
         @media (max-width: toEm(991.98)) {
             flex-wrap: wrap;
             padding-block-start: toRem(30);
@@ -294,9 +302,19 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: light-dark($mainColor, $primaryColor);
+        .dark & {
+            background-color: $primaryColor;
+        }
+        .light & {
+            background-color: $mainColor;
+        }
         .contacts-block__item-wrapper & {
-            background-color: light-dark($lightText, $mainColor);
+            .dark & {
+                background-color: $mainColor;
+            }
+            .light & {
+                background-color: $lightText;
+            }
         }
         @media (max-width: toEm(428)) {
             width: toRem(50);
@@ -317,9 +335,14 @@
         column-gap: toRem(28);
         row-gap: toRem(44);
         border-radius: toRem(100) toRem(40) toRem(40) toRem(100);
-        background-color: light-dark($mainColor, $primaryColor);
         padding-block-start: toRem(43);
         padding-block-end: toRem(47);
+        .dark & {
+            background-color: $primaryColor;
+        }
+        .light & {
+            background-color: $mainColor;
+        }
         @media (max-width: toEm(991.98)) {
             border-radius: toRem(70) toRem(70) toRem(40) toRem(40);
         }
@@ -333,11 +356,17 @@
     &__container {
         padding-block: toRem(34);
         border-radius: toRem(40);
-        background-color: light-dark($darkText, $darkBackground);
+
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: toRem(56) toRem(20);
+        .dark & {
+            background-color: $darkBackground;
+        }
+        .light & {
+            background-color: $darkText;
+        }
         @media (max-width: toEm(991.98)) {
             flex-wrap: wrap;
             justify-content: center;
@@ -561,11 +590,16 @@
     //care__wrapper
     &__wrapper {
         border-radius: toRem(40);
-        background-color: light-dark($darkText, $darkBackground);
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(toRem(312), 1fr));
         gap: toRem($gap);
         overflow: hidden;
+        .dark & {
+            background-color: $darkBackground;
+        }
+        .light & {
+            background-color: $darkText;
+        }
         @media (max-width: toEm(428)) {
             grid-template-columns: minmax(auto, 1fr);
         }
@@ -683,21 +717,6 @@
 
     &__title-block {
         max-width: toRem(646);
-
-        // .title-block__subtitle
-
-        & .title-block__subtitle {
-        }
-
-        // .title-block__title
-
-        & .title-block__title {
-        }
-
-        // .title-block__text
-
-        & .title-block__text {
-        }
     }
 
     // .pricing__rates
@@ -747,25 +766,6 @@
         row-gap: toRem(83);
     }
 
-    // .reviews__title-block
-
-    &__title-block {
-        // .title-block__subtitle
-
-        & .title-block__subtitle {
-        }
-
-        // .title-block__title
-
-        & .title-block__title {
-        }
-
-        // .title-block__text
-
-        & .title-block__text {
-        }
-    }
-
     // .reviews__swiper
 
     &__swiper {
@@ -812,8 +812,13 @@
         border-radius: toRem(40);
         padding-block-start: toRem(97);
         padding-block-end: toRem(86);
-        background-color: light-dark($darkText, $darkBackground);
         padding-inline: toRem(111);
+        .dark & {
+            background-color: $darkBackground;
+        }
+        .light & {
+            background-color: $darkText;
+        }
         @media (max-width: toEm(991.98)) {
             padding-inline: toRem(31);
             row-gap: toRem(49);
@@ -824,10 +829,6 @@
         }
     }
 
-    // .booking__title-block
-
-    &__title-block {
-    }
 
     // .booking__form
 

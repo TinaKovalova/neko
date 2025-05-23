@@ -1,11 +1,24 @@
 .header {
-    position: sticky;
+    position: fixed;
     z-index: 100;
     top: 0;
     width: 100%;
     padding-block-start: toRem(20);
-    background: light-dark(rgba(246, 221, 233, 0.5), $darkBackground);
-    backdrop-filter: blur(toRem(10));
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        filter: blur(toRem(20));
+        // background: $darkBackground;
+        // .light & {
+        //     background: $ligthGradient;
+        // }
+    }
     @media (max-width: toEm(991.98)) {
         padding-block-start: toRem(15);
     }
@@ -47,7 +60,12 @@
         aspect-ratio: 188 / 73;
     }
     & svg .logo-letter {
-        fill: light-dark($lightText, $darkText);
+        .dark & {
+            fill: $darkText;
+        }
+        .light & {
+            fill: $lightText;
+        }
     }
 }
 .navigation {

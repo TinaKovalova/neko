@@ -307,7 +307,12 @@
     padding-block-end: toRem(48);
     padding-inline: toRem(41);
     border-radius: toRem(40);
-    background-color: light-dark($darkText, $darkBackground);
+    .dark & {
+        background-color: $darkBackground;
+    }
+    .light & {
+        background-color: $darkText;
+    }
     @media (max-width: toEm(1100)) {
         padding-inline-end: toRem(30);
         padding-inline-start: toRem(40);
@@ -394,8 +399,13 @@
             content: "";
             width: toRem(37);
             height: toRem(37);
-            background-color: light-dark($lightText, $darkText);
             mask: url("../images/svg-icons/check-circle.svg") center/contain no-repeat;
+            .dark & {
+                background-color: $darkText;
+            }
+            .light & {
+                background-color: $lightText;
+            }
         }
     }
     & .button {
@@ -427,7 +437,12 @@
     padding-block-end: toRem(44);
     padding-inline: toRem(41);
     border-radius: toRem(40);
-    background-color: light-dark($darkText, $darkBackground);
+    .dark & {
+        background-color: $darkBackground;
+    }
+    .light & {
+        background-color: $darkText;
+    }
 
     &::before {
         content: "";
@@ -491,7 +506,12 @@
     display: flex;
     flex-direction: column;
     row-gap: toRem(47);
-    color: light-dark($lightText, $darkText);
+    .dark & {
+        color: $darkText;
+    }
+    .light & {
+        color: $lightText;
+    }
     @media (max-width: toEm(427.98)) {
         row-gap: toRem(20);
     }
@@ -538,7 +558,6 @@
         vertical-align: bottom;
         border-radius: toRem(40);
         border: toRem(1) solid $darkText;
-        border-color: light-dark(#b7b7b7, $darkText);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -551,12 +570,17 @@
             -webkit-text-fill-color: inherit;
             -webkit-box-shadow: 0 0 0px 1000px $darkBackground inset;
         }
-
         &--select {
             padding-inline-end: toRem(96);
             @media (max-width: toEm(747.98)) {
                 padding-inline-end: toRem(71);
             }
+        }
+        .dark & {
+            border-color: $darkText;
+        }
+        .light & {
+            border-color: #b7b7b7;
         }
         &:focus-within {
             color: inherit;

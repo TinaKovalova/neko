@@ -6,16 +6,21 @@
 
 html {
     scroll-behavior: smooth;
-    color-scheme: light dark;
-    --scrooll-margin-top: 0;
+    --scrooll-margin-top: toRem(113);
 }
 
 body {
     font-family: "Poppins", sans-serif;
     font-size: toRem(14);
     line-height: 1.5;
-    background-color: light-dark($lightColor, $darkColor);
-    color: light-dark($lightText, $darkText);
+    .dark & {
+        background-color: $darkColor;
+        color: $darkText;
+    }
+    .light & {
+        background-color: $lightColor;
+        color: $lightText;
+    }
     &:has(.menu-burger.active) {
         overflow: hidden;
     }
