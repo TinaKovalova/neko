@@ -536,9 +536,9 @@
             min-width: 100%;
         }
     }
-    // .form-booking__lable
+    // .form-booking__label
 
-    &__lable {
+    &__label {
         position: absolute;
         top: toRem(14);
         left: toRem(39);
@@ -706,7 +706,7 @@
     // .subscription-form__label
 
     &__label {
-        @extend .form-booking__lable;
+        @extend .form-booking__label;
     }
     //subscription-form__input
     &__input {

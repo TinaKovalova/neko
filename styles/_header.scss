@@ -104,7 +104,7 @@
             font-size: toRem(32);
             font-weight: 700;
             color: $darkText;
-            padding-inline: toRem(44);
+            padding-inline: toRem(20);
         }
     }
 
@@ -130,6 +130,8 @@
     width: toRem(109);
     height: toRem(45);
     position: relative;
+    border-radius: toRem(220);
+
     &::before,
     &::after {
         content: "";
@@ -137,44 +139,41 @@
         height: toRem(24);
         position: absolute;
         top: 50%;
+        left: 50%;
         z-index: 1;
         pointer-events: none;
     }
     &::before {
-        left: toRem(15);
-        transform: translateY(-50%);
+        transform: translate(-160%, -50%);
         background-color: $lightColor;
         mask: url("../images/svg-icons/moon.svg") center/contain no-repeat;
     }
     &::after {
-        right: toRem(15);
-        transform: translateY(-50%);
+        transform: translate(60%, -50%);
         background-color: $darkColor;
         mask: url("../images/svg-icons/sun.svg") center/contain no-repeat;
     }
-    &:has(> .theme-form__input:checked) {
-        & .theme-form__icon.theme-form__icon--day {
-            background-color: $lightColor;
-        }
-        & .theme-form__icon.theme-form__icon--night {
+    &:has(.theme-form__input:checked) {
+        &::before {
             background-color: $darkColor;
         }
+        &::after {
+            background-color: $lightColor;
+        }
     }
-    &__lable {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
+    &__label {
+        display: block;
+        max-width: 100%;
+        min-height: 100%;
         background-color: #ffffff;
         border-radius: toRem(220);
-        padding-inline: toRem(18);
-        padding-block: toRem(11);
         &::before {
             content: "";
             width: 55.05%; /* 60/109 */
-            height: 101%;
+            min-height: 101%;
             border-radius: toRem(40);
             position: absolute;
-            left: -1px;
+            left: 0;
             top: 0;
             background-color: $mainColor;
             transition: all 0.4s;
