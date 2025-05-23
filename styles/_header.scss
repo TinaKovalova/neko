@@ -3,7 +3,8 @@
     z-index: 100;
     top: 0;
     width: 100%;
-    padding-block-start: toRem(20);
+    padding-block-start: toRem(5);
+    backdrop-filter: blur(toRem(10));
 
     &::before {
         content: "";
@@ -13,11 +14,6 @@
         left: 0;
         top: 0;
         z-index: -1;
-        filter: blur(toRem(20));
-        // background: $darkBackground;
-        // .light & {
-        //     background: $ligthGradient;
-        // }
     }
     @media (max-width: toEm(991.98)) {
         padding-block-start: toRem(15);
@@ -118,6 +114,11 @@
         font-weight: 700;
         text-transform: capitalize;
         transition: color 0.3s;
+        @media (min-width: toEm(991.98)) {
+            .light & {
+                text-shadow: 0 0 toRem(6) $lightColor;
+            }
+        }
         @media (any-hover: hover) {
             &:hover {
                 color: $primaryColor;
@@ -126,13 +127,43 @@
     }
 }
 .theme-form {
+    width: toRem(109);
+    height: toRem(45);
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        width: toRem(24);
+        height: toRem(24);
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        pointer-events: none;
+    }
+    &::before {
+        left: toRem(15);
+        transform: translateY(-50%);
+        background-color: $lightColor;
+        mask: url("../images/svg-icons/moon.svg") center/contain no-repeat;
+    }
+    &::after {
+        right: toRem(15);
+        transform: translateY(-50%);
+        background-color: $darkColor;
+        mask: url("../images/svg-icons/sun.svg") center/contain no-repeat;
+    }
+    &:has(> .theme-form__input:checked) {
+        & .theme-form__icon.theme-form__icon--day {
+            background-color: $lightColor;
+        }
+        & .theme-form__icon.theme-form__icon--night {
+            background-color: $darkColor;
+        }
+    }
     &__lable {
-        width: toRem(109);
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        column-gap: toRem(28);
+        display: inline-block;
+        width: 100%;
+        height: 100%;
         background-color: #ffffff;
         border-radius: toRem(220);
         padding-inline: toRem(18);
@@ -152,30 +183,10 @@
             &::before {
                 transform: translateX(84.5%);
             }
-            & .theme-form__icon.theme-form__icon--day {
-                background-color: $lightColor;
-            }
-            & .theme-form__icon.theme-form__icon--night {
-                background-color: $darkColor;
-            }
         }
     }
     .menu-burger &__lable::before {
         background-color: $primaryColor;
-    }
-    // .theme-form__icon
-
-    &__icon {
-        width: toRem(24);
-        height: toRem(24);
-        &--night {
-            background-color: $lightColor;
-            mask: url("../images/svg-icons/moon.svg") center/contain no-repeat;
-        }
-        &--day {
-            background-color: $darkColor;
-            mask: url("../images/svg-icons/sun.svg") center/contain no-repeat;
-        }
     }
 
     // .theme-form__input

@@ -467,6 +467,7 @@
     &__container {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         gap: toRem(80) toRem(20);
         @media (max-width: toEm(991.98)) {
             flex-wrap: wrap;
@@ -524,6 +525,20 @@
         padding-block: toRem(26);
         &:not(:last-child) {
             border-bottom: toRem(2) solid rgba(128, 128, 128, 0.13);
+        }
+        &::details-content {
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition:
+                height 0.4s,
+                content-visibility 0.4s,
+                opacity 0.5s;
+            transition-behavior: allow-discrete;
+        }
+        &[open]::details-content {
+            height: auto;
+            opacity: 1;
         }
         @media (max-width: toEm(991.98)) {
             padding-block-start: toRem(32);
@@ -828,7 +843,6 @@
             padding-inline: toRem(10);
         }
     }
-
 
     // .booking__form
 

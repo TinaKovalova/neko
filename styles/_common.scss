@@ -414,7 +414,7 @@
             min-width: 100%;
         }
     }
-    &--primary {
+    &--primary.rate-card {
         color: $darkText;
         background-color: $mainColor;
 
@@ -605,6 +605,9 @@
         &--select {
             background-color: $darkText;
             mask: url("../images/svg-icons/resize-circle-vertical.svg") center / contain no-repeat;
+            .light & {
+                background-color: $mainColor;
+            }
         }
         &--date {
             width: toRem(54);
@@ -623,12 +626,6 @@
         }
         @media (any-hover: hover) {
             &:hover {
-                background-color: rebeccapurple;
-            }
-            &--select:hover {
-                background-color: $mainColor;
-            }
-            &--date:hover {
                 background-color: $primaryColor;
             }
         }

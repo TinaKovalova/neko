@@ -107,5 +107,18 @@ window.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
     selectOptions.classList.toggle("_open");
   });
+
+// Details
+  const detailsList = document.querySelector(".our-rooms__details-list");
+  detailsList?.addEventListener("click", (e) => {
+    const target = e.currentTarget
+    if (target.children.length > 0) {
+      for (let child of target.children) {
+        if (child.classList.contains("our-rooms__details") && child !== e.target.parentElement) {
+          child.removeAttribute("open");
+        } 
+      }
+    }
+  });
 });
 

@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    interpolate-size: allow-keywords;
     --scrooll-margin-top: toRem(113);
 }
 
