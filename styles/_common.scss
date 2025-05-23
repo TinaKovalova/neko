@@ -588,6 +588,9 @@
             background:
                 url("../images/svg-icons/calendar.svg") center / 64% no-repeat,
                 $mainColor;
+            @media (pointer: coarse) {
+                pointer-events: none;
+            }
         }
         @media (max-width: toEm(747.98)) {
             right: toRem(13);
