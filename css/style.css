@@ -977,7 +977,6 @@ body:has(.menu-burger.active) {
   left: 0;
   top: 110%;
   width: 100%;
-  background-color: #161616;
   border-radius: 1.25rem;
   -webkit-padding-start: 2.125rem;
           padding-inline-start: 2.125rem;
@@ -1002,6 +1001,13 @@ body:has(.menu-burger.active) {
   transition: opacity 0.4s, -webkit-transform 0.4s;
   transition: opacity 0.4s, transform 0.4s;
   transition: opacity 0.4s, transform 0.4s, -webkit-transform 0.4s;
+}
+.dark .form-booking__options {
+  background-color: #161616;
+}
+.light .form-booking__options {
+  background-color: #ffffff;
+  border-color: #b7b7b7;
 }
 .form-booking__options._open {
   opacity: 1;

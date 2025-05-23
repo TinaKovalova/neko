@@ -645,7 +645,6 @@
         left: 0;
         top: 110%;
         width: 100%;
-        background-color: $darkBackground;
         border-radius: toRem(20);
         padding-inline-start: toRem(34);
         padding-block: toRem(10);
@@ -659,6 +658,13 @@
         transition:
             opacity 0.4s,
             transform 0.4s;
+        .dark & {
+            background-color: $darkBackground;
+        }
+        .light & {
+            background-color: $darkText;
+            border-color: #b7b7b7;
+        }
         &._open {
             opacity: 1;
             transform: scale(1);
