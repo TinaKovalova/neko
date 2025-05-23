@@ -919,11 +919,7 @@ body:has(.menu-burger.active) {
   width: 3.375rem;
   height: 3.375rem;
   background: url("../images/svg-icons/calendar.svg") center/64% no-repeat, #c75e90;
-}
-@media (pointer: coarse) {
-  .form-booking__input-button--date {
-    pointer-events: none;
-  }
+  pointer-events: none;
 }
 @media (max-width: 46.74875em) {
   .form-booking__input-button {
