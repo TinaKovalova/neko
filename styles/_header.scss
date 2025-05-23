@@ -100,7 +100,7 @@
         .menu-burger & {
             flex-direction: column;
             align-items: flex-start;
-            row-gap: toRem(78);
+            row-gap: toRem(40);
             font-size: toRem(32);
             font-weight: 700;
             color: $darkText;
@@ -139,17 +139,18 @@
         height: toRem(24);
         position: absolute;
         top: 50%;
-        left: 50%;
         z-index: 1;
         pointer-events: none;
     }
     &::before {
+        left: 50%;
         transform: translate(-160%, -50%);
         background-color: $lightColor;
         mask: url("../images/svg-icons/moon.svg") center/contain no-repeat;
     }
     &::after {
-        transform: translate(60%, -50%);
+        right: 50%;
+        transform: translate(160%, -50%);
         background-color: $darkColor;
         mask: url("../images/svg-icons/sun.svg") center/contain no-repeat;
     }
@@ -161,6 +162,21 @@
             background-color: $lightColor;
         }
     }
+    .menu-burger & {
+        width: toRem(157);
+        height: toRem(65);
+        &::before {
+            transform: translate(-135%, -50%);
+        }
+        &::after {
+            transform: translate(135%, -50%);
+        }
+        &::before,
+        &::after {
+            width: toRem(44);
+            height: toRem(44);
+        }
+    }
     &__label {
         display: block;
         max-width: 100%;
@@ -170,13 +186,16 @@
         &::before {
             content: "";
             width: 55.05%; /* 60/109 */
-            min-height: 101%;
+            min-height: 100%;
             border-radius: toRem(40);
             position: absolute;
             left: 0;
             top: 0;
             background-color: $mainColor;
             transition: all 0.4s;
+            .menu-burger & {
+                background-color: $primaryColor;
+            }
         }
         &:has(> .theme-form__input:checked) {
             &::before {
@@ -278,12 +297,5 @@
         background-color: $primaryColor;
         padding-block: toRem(20);
         font-size: toRem(16);
-    }
-    & .theme-form__lable {
-        width: toRem(157);
-        & .theme-form__icon {
-            width: toRem(44);
-            height: toRem(44);
-        }
     }
 }

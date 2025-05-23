@@ -1224,7 +1224,7 @@ body:has(.menu-burger.active) {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  row-gap: 4.875rem;
+  row-gap: 2.5rem;
   font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
@@ -1259,11 +1259,11 @@ body:has(.menu-burger.active) {
   height: 1.5rem;
   position: absolute;
   top: 50%;
-  left: 50%;
   z-index: 1;
   pointer-events: none;
 }
 .theme-form::before {
+  left: 50%;
   -webkit-transform: translate(-160%, -50%);
       -ms-transform: translate(-160%, -50%);
           transform: translate(-160%, -50%);
@@ -1272,9 +1272,10 @@ body:has(.menu-burger.active) {
           mask: url("../images/svg-icons/moon.svg") center/contain no-repeat;
 }
 .theme-form::after {
-  -webkit-transform: translate(60%, -50%);
-      -ms-transform: translate(60%, -50%);
-          transform: translate(60%, -50%);
+  right: 50%;
+  -webkit-transform: translate(160%, -50%);
+      -ms-transform: translate(160%, -50%);
+          transform: translate(160%, -50%);
   background-color: #1d1d1d;
   -webkit-mask: url("../images/svg-icons/sun.svg") center/contain no-repeat;
           mask: url("../images/svg-icons/sun.svg") center/contain no-repeat;
@@ -1284,6 +1285,24 @@ body:has(.menu-burger.active) {
 }
 .theme-form:has(.theme-form__input:checked)::after {
   background-color: #fbf6f8;
+}
+.menu-burger .theme-form {
+  width: 9.8125rem;
+  height: 4.0625rem;
+}
+.menu-burger .theme-form::before {
+  -webkit-transform: translate(-135%, -50%);
+      -ms-transform: translate(-135%, -50%);
+          transform: translate(-135%, -50%);
+}
+.menu-burger .theme-form::after {
+  -webkit-transform: translate(135%, -50%);
+      -ms-transform: translate(135%, -50%);
+          transform: translate(135%, -50%);
+}
+.menu-burger .theme-form::before, .menu-burger .theme-form::after {
+  width: 2.75rem;
+  height: 2.75rem;
 }
 .theme-form__label {
   display: block;
@@ -1295,7 +1314,7 @@ body:has(.menu-burger.active) {
 .theme-form__label::before {
   content: "";
   width: 55.05%; /* 60/109 */
-  min-height: 101%;
+  min-height: 100%;
   border-radius: 2.5rem;
   position: absolute;
   left: 0;
@@ -1303,6 +1322,9 @@ body:has(.menu-burger.active) {
   background-color: #c75e90;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+}
+.menu-burger .theme-form__label::before {
+  background-color: #8e345f;
 }
 .theme-form__label:has(> .theme-form__input:checked)::before {
   -webkit-transform: translateX(84.5%);
@@ -1425,13 +1447,6 @@ body:has(.menu-burger.active) {
   background-color: #8e345f;
   padding-block: 1.25rem;
   font-size: 1rem;
-}
-.menu-burger .theme-form__lable {
-  width: 9.8125rem;
-}
-.menu-burger .theme-form__lable .theme-form__icon {
-  width: 2.75rem;
-  height: 2.75rem;
 }
 
 .hero {
