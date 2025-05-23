@@ -13,8 +13,9 @@ $icon-linkedin2: unquote('"\\eaca"');
 @font-face {
     font-family: "icomoon";
     src:
-        url("../fonts/icomoon.ttf") format("truetype"),
-        url("../fonts/icomoon.woff") format("woff");
+        url("../fonts/icomoon.woff2") format("woff2"),
+        url("../fonts/icomoon.woff") format("woff"),
+        url("../fonts/icomoon.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -89,6 +90,7 @@ $icon-linkedin2: unquote('"\\eaca"');
 @font-face {
     font-family: "Glyphter";
     src:
+        url("../fonts/Glyphter.woff2") format("woff2"),
         url("../fonts/Glyphter.woff") format("woff"),
         url("../fonts/Glyphter.ttf") format("truetype");
     font-weight: normal;
@@ -104,6 +106,12 @@ $icon-linkedin2: unquote('"\\eaca"');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.icon-crown-elegant:before{content:'\0041';}
-.icon-crown-royal:before{content:'\0042';}
-.icon-crown-triangles:before{content:'\0043';}
+.icon-crown-elegant:before {
+    content: "\0041";
+}
+.icon-crown-royal:before {
+    content: "\0042";
+}
+.icon-crown-triangles:before {
+    content: "\0043";
+}
