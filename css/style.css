@@ -1351,7 +1351,7 @@ body:has(.menu-burger.active) {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 6.5625rem;
+  row-gap: 2rem;
   background-color: #c75e90;
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);

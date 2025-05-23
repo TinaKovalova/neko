@@ -235,7 +235,7 @@
     left: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: toRem(105);
+    row-gap: toRem(32);
     background-color: $mainColor;
     transform: translateX(0);
     transition: transform 0.6s;
