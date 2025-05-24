@@ -57,13 +57,12 @@
         font-weight: 700;
         color: $subtitleColor;
         ._observed > & {
-            transform: scale(0);
-            transform-origin: left top;
+            transform: scale(0.9) translateY(30%);
             opacity: 0.5;
-            transition: all 0.4s ease-out;
+            transition: all 0.3s ease-out;
         }
         ._observed._animated > & {
-            transform: scale(1);
+            transform: scale(1) translateY(0);
             opacity: 1;
         }
         .title-block--centered & {
@@ -84,13 +83,12 @@
         text-transform: capitalize;
         font-weight: 700;
         ._observed > & {
-            transform: scale(0);
-            transform-origin: left top;
-            opacity: 0.5;
-            transition: all 0.6s ease-out 0.3s;
+            transform: scale(0.9) translateY(50%);
+            opacity: 0.3;
+            transition: all 0.4s ease-out 0.2s;
         }
         ._observed._animated > & {
-            transform: scale(1);
+            transform: scale(1) translateY(0);
             opacity: 1;
         }
         .title-block--centered > & {
@@ -106,9 +104,9 @@
         & p {
             ._observed > & {
                 opacity: 0;
-                transform: scale(0);
-                transform-origin: left top;
-                transition: all 0.8s ease-out 0.6s;
+                transform: scale(0.9);
+                transform-origin: center;
+                transition: all 0.5s ease-out 0.5s;
             }
             ._observed._animated > & {
                 opacity: 1;

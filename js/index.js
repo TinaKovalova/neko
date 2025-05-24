@@ -51,13 +51,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //burger actions
   burgerButton?.addEventListener("click", () => {
-    menuBurger?.classList.toggle("active");
+    menuBurger?.classList.toggle("_active");
   });
   menuBurger?.addEventListener("click", (e) => {
     if (e.target.closest("a") || e.target.closest("button")) {
-      menuBurger?.classList.toggle("active");
+      menuBurger?.classList.toggle("_active");
     }
   });
+  const navigationItems = document.querySelectorAll(".navigation__item");
+  if (navigationItems.length > 0) {
+    navigationItems.forEach((item, i) => {
+      item.style.transitionDelay = `${i * 0.2}s`;
+    })
+  }
 
   //Select
   const select = document.querySelector(
@@ -123,13 +129,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   //Observer
-  const gallerySlides = document.querySelectorAll(".gallery__swiper .gallery-card");
-  if (gallerySlides.length > 0) {
-    gallerySlides.forEach((slide, i)=> slide.style.transitionDelay = `${i*0.1}s` )
+  const serviceCards = document.querySelectorAll(".service-card");
+  if (serviceCards.length > 0) {
+    serviceCards.forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.3}s`;
+    });
+  }
+  
+  const borgerImages = document.querySelectorAll(".hero__border-image");
+  if (borgerImages.length > 0) {
+    borgerImages.forEach((image, i) => {
+      image.style.transitionDelay = `${i * 0.2}s`;
+    });
   }
 
   const options = {
-    threshold:0.8,
+    threshold:0.7,
   };
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {

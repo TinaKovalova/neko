@@ -130,6 +130,7 @@
             right: 0;
             bottom: 0;
         }
+
         @media (min-width: toEm(991.98)) {
             transform: translateX(toRem(29));
         }
@@ -152,7 +153,17 @@
         position: relative;
         width: toPecent(566, 671);
         height: 100%;
-
+        &._observed {
+            & .hero__border-image {
+                transform: scale(0);
+                transition: all 0.4s ease-out 0.6s;
+            }
+        }
+        &._observed._animated {
+            & .hero__border-image {
+                transform: scale(1);
+            }
+        }
         @media (max-width: toEm(767.98)) {
             width: toPecent(371, 430);
             height: toRem(365);
@@ -520,18 +531,20 @@
     }
 
     ._observed .item-details {
-        transform: translateX(100%);
+        transform: translateY(-10%);
         opacity: 0;
-        transition: all 0.6s ease-out 0.3s;
+        transition:
+            opacity 0.4s ease-out,
+            transform 0.4s ease-out;
         &:nth-child(2) {
-            transition-delay: 0.4s;
+            transition-delay: 0.2s;
         }
         &:nth-child(3) {
-            transition-delay: 0.6s;
+            transition-delay: 0.4s;
         }
     }
     ._observed._animated .item-details {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -551,6 +564,16 @@
         }
         .light & {
             background-color: $darkText;
+        }
+        &._observed .service-card {
+            opacity: 0;
+            transform: scale(0.7);
+            transform-origin: left bottom;
+            transition: all 0.5s ease-out;
+        }
+        &._observed._animated .service-card {
+            opacity: 1;
+            transform: scale(1);
         }
         @media (max-width: toEm(428)) {
             grid-template-columns: minmax(auto, 1fr);
@@ -647,20 +670,6 @@
             }
         }
 
-        &._observed {
-            & .gallery-card {
-                transform: scale(0);
-                opacity: 0;
-                transform-origin: center;
-                transition: all 0.5s ease;
-            }
-        }
-        &._observed._animated {
-            & .gallery-card {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
         @extend %swiper-buttons;
     }
 }
@@ -708,7 +717,7 @@
 
         @media (min-width: toEm(991.98)) {
             &._observed .rate-card {
-                transition: transform 0.6s ease-out;
+                transition: all 0.6s ease-out;
                 &:first-child {
                     transform: translateX(100%);
                 }
@@ -719,7 +728,7 @@
                 &.rate-card--primary {
                     z-index: 1;
                     transform: scale(1);
-                    transition: transform 0.3s ease 0.6s;
+                    transition-delay: 0.6s;
                 }
             }
             &._observed._animated .rate-card {

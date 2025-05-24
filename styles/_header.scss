@@ -108,6 +108,17 @@
         }
     }
 
+    //navigation__item
+    &__item {
+        .menu-burger & {
+            transform: translateX(200%);
+            transition: transform 0.5s ease-out 0.3s;
+        }
+        .menu-burger._active & {
+            transform: translateX(0);
+        }
+    }
+
     // .navigation__link
 
     &__link {
@@ -287,7 +298,7 @@
     transform: translateX(0);
     transition: transform 0.6s;
 
-    &.active {
+    &._active {
         transform: translateX(-100%);
     }
     @media (max-width: toEm(991.98)) {
