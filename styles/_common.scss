@@ -742,3 +742,86 @@
         }
     }
 }
+
+.item-details {
+    padding-block-start: toRem(30);
+    padding-block-end: toRem(35);
+    &:not(:last-child) {
+        border-bottom: toRem(2) solid rgba(128, 128, 128, 0.13);
+    }
+    @media (max-width: toEm(991.98)) {
+        padding-block-start: toRem(27);
+    }
+    // .item-details__details
+
+    &__details {
+        &[open] + .item-details__details-content {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+    }
+
+    // .item-details__summary
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        column-gap: toRem(36);
+        font-size: toRem(20);
+        font-weight: 700;
+        &::-webkit-details-marker {
+            display: none;
+        }
+        &::before {
+            content: "";
+            align-self: flex-start;
+            flex-shrink: 0;
+            width: toRem(44);
+            height: toRem(44);
+            border-radius: 50%;
+            background:
+                url("../images/svg-icons/arrow.svg") center/70% no-repeat,
+                $mainColor;
+            transition: transform 0.5s;
+        }
+        .item-details__details[open] &::before {
+            transform: rotate(-180deg);
+        }
+        @media (max-width: toEm(991.98)) {
+            column-gap: toRem(22);
+        }
+        @media (max-width: toEm(428)) {
+            column-gap: toRem(15);
+            &::before {
+                width: toRem(30);
+                height: toRem(30);
+            }
+        }
+    }
+
+    // .item-details__details-content
+
+    &__details-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0.3;
+        transition:
+            grid-template-rows 0.4s ease-in-out,
+            opacity 0.6s;
+    }
+
+    // .item-details__details-body
+
+    &__details-body {
+        overflow: hidden;
+        padding-inline-start: toRem(80);
+        padding-block-start: toRem(19);
+        @media (max-width: toEm(991.98)) {
+            padding-inline-start: toRem(65);
+            padding-block-start: toRem(16);
+        }
+        @media (max-width: toEm(428)) {
+            padding-inline-start: toRem(47);
+        }
+    }
+}

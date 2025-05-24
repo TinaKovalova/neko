@@ -109,16 +109,15 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
 // Details
-  const detailsList = document.querySelector(".our-rooms__details-list");
-  detailsList?.addEventListener("click", (e) => {
-    const target = e.currentTarget
-    if (target.children.length > 0) {
-      for (let child of target.children) {
-        if (child.classList.contains("our-rooms__details") && child !== e.target.parentElement) {
-          child.removeAttribute("open");
-        } 
-      }
-    }
-  });
-});
+  const details = document.querySelectorAll(".item-details__details");
 
+  details?.forEach(element => element.addEventListener("toggle", (e) => {
+    if (e.target.open) {
+      details.forEach((detail) => {
+        if (detail.open && detail !== e.target) {
+          detail.removeAttribute("open");
+        }
+      });
+    }
+  }))
+ })
