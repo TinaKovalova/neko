@@ -58,7 +58,7 @@
         color: $subtitleColor;
         ._observed > & {
             transform: scale(0.9) translateY(30%);
-            opacity: 0.5;
+            opacity: 0;
             transition: all 0.3s ease-out;
         }
         ._observed._animated > & {
@@ -84,8 +84,8 @@
         font-weight: 700;
         ._observed > & {
             transform: scale(0.9) translateY(50%);
-            opacity: 0.3;
-            transition: all 0.4s ease-out 0.2s;
+            opacity: 0;
+            transition: all 0.3s ease-out 0.2s;
         }
         ._observed._animated > & {
             transform: scale(1) translateY(0);
@@ -106,7 +106,7 @@
                 opacity: 0;
                 transform: scale(0.9);
                 transform-origin: center;
-                transition: all 0.5s ease-out 0.5s;
+                transition: all 0.3s ease-out 0.4s;
             }
             ._observed._animated > & {
                 opacity: 1;

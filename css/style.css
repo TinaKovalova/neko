@@ -374,7 +374,7 @@ body:has(.menu-burger.active) {
   -webkit-transform: scale(0.9) translateY(30%);
       -ms-transform: scale(0.9) translateY(30%);
           transform: scale(0.9) translateY(30%);
-  opacity: 0.5;
+  opacity: 0;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
@@ -406,9 +406,9 @@ body:has(.menu-burger.active) {
   -webkit-transform: scale(0.9) translateY(50%);
       -ms-transform: scale(0.9) translateY(50%);
           transform: scale(0.9) translateY(50%);
-  opacity: 0.3;
-  -webkit-transition: all 0.4s ease-out 0.2s;
-  transition: all 0.4s ease-out 0.2s;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out 0.2s;
+  transition: all 0.3s ease-out 0.2s;
 }
 ._observed._animated > .title-block__title {
   -webkit-transform: scale(1) translateY(0);
@@ -434,8 +434,8 @@ body:has(.menu-burger.active) {
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
-  -webkit-transition: all 0.5s ease-out 0.5s;
-  transition: all 0.5s ease-out 0.5s;
+  -webkit-transition: all 0.3s ease-out 0.4s;
+  transition: all 0.3s ease-out 0.4s;
 }
 ._observed._animated > .title-block__text p {
   opacity: 1;
