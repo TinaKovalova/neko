@@ -565,13 +565,13 @@
         .light & {
             background-color: $darkText;
         }
-        &._observed .service-card {
+        & .service-card {
             opacity: 0;
             transform: scale(0.7);
             transform-origin: left bottom;
-            transition: all 0.5s ease-out;
+            transition: all 0.4s ease-out;
         }
-        &._observed._animated .service-card {
+        & .service-card._animated {
             opacity: 1;
             transform: scale(1);
         }

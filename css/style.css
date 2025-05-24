@@ -1376,6 +1376,7 @@ body:has(.menu-burger.active) {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 0.9375rem 3.75rem;
+  max-width: 100%;
 }
 @media (max-width: 71.875em) {
   .navigation__list {
@@ -1403,10 +1404,10 @@ body:has(.menu-burger.active) {
   -webkit-transform: translateX(200%);
       -ms-transform: translateX(200%);
           transform: translateX(200%);
-  -webkit-transition: -webkit-transform 0.5s ease-out 0.3s;
-  transition: -webkit-transform 0.5s ease-out 0.3s;
-  transition: transform 0.5s ease-out 0.3s;
-  transition: transform 0.5s ease-out 0.3s, -webkit-transform 0.5s ease-out 0.3s;
+  -webkit-transition: -webkit-transform 0.4s ease-out 0.3s;
+  transition: -webkit-transform 0.4s ease-out 0.3s;
+  transition: transform 0.4s ease-out 0.3s;
+  transition: transform 0.4s ease-out 0.3s, -webkit-transform 0.4s ease-out 0.3s;
 }
 .menu-burger._active .navigation__item {
   -webkit-transform: translateX(0);
@@ -2277,7 +2278,7 @@ body:has(.menu-burger.active) {
 .light .care__wrapper {
   background-color: #ffffff;
 }
-.care__wrapper._observed .service-card {
+.care__wrapper .service-card {
   opacity: 0;
   -webkit-transform: scale(0.7);
       -ms-transform: scale(0.7);
@@ -2285,10 +2286,10 @@ body:has(.menu-burger.active) {
   -webkit-transform-origin: left bottom;
       -ms-transform-origin: left bottom;
           transform-origin: left bottom;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
-.care__wrapper._observed._animated .service-card {
+.care__wrapper .service-card._animated {
   opacity: 1;
   -webkit-transform: scale(1);
       -ms-transform: scale(1);

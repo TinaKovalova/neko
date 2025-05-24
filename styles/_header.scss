@@ -93,6 +93,7 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: toRem(15) toRem(60);
+        max-width: 100%;
         @media (max-width: toEm(1150)) {
             margin-left: 0;
             column-gap: toRem(30);
@@ -112,7 +113,7 @@
     &__item {
         .menu-burger & {
             transform: translateX(200%);
-            transition: transform 0.5s ease-out 0.3s;
+            transition: transform 0.4s ease-out 0.3s;
         }
         .menu-burger._active & {
             transform: translateX(0);

@@ -129,13 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   //Observer
-  const serviceCards = document.querySelectorAll(".service-card");
-  if (serviceCards.length > 0) {
-    serviceCards.forEach((card, i) => {
-      card.style.transitionDelay = `${i * 0.3}s`;
-    });
-  }
-  
+ 
   const borgerImages = document.querySelectorAll(".hero__border-image");
   if (borgerImages.length > 0) {
     borgerImages.forEach((image, i) => {
@@ -144,7 +138,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const options = {
-    threshold:0.6,
+    threshold:0.7,
   };
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -158,6 +152,30 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const titles = document.querySelectorAll("._observed");
   titles.forEach((title) => observer.observe(title));
+
+
+  const serviceCards = document.querySelectorAll(".service-card");
+  if (serviceCards.length > 0) {
+    serviceCards.forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.1}s`;
+    });
+  }
+  
+  const serviceCardObserver = new IntersectionObserver(
+    (entries, serviceCardObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("_animated");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.4,
+    }
+  );
+  
+  serviceCards?.forEach((service) => serviceCardObserver.observe(service));
 
 })
 
