@@ -56,7 +56,18 @@
         text-transform: uppercase;
         font-weight: 700;
         color: $subtitleColor;
+        ._observed > & {
+            transform: scale(0);
+            transform-origin: left top;
+            opacity: 0.5;
+            transition: all 0.4s ease-out;
+        }
+        ._observed._animated > & {
+            transform: scale(1);
+            opacity: 1;
+        }
         .title-block--centered & {
+            transform-origin: top;
             &:not(:last-child) {
                 margin-bottom: toRem(5);
             }
@@ -72,12 +83,42 @@
         font-size: toRem(40);
         text-transform: capitalize;
         font-weight: 700;
+        ._observed > & {
+            transform: scale(0);
+            transform-origin: left top;
+            opacity: 0.5;
+            transition: all 0.6s ease-out 0.3s;
+        }
+        ._observed._animated > & {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .title-block--centered > & {
+            transform-origin: top;
+        }
         @media (max-width: toEm(767.98)) {
             font-size: toRem(36);
         }
     }
     //title-block__text
     &__text {
+        // overflow: hidden;
+        & p {
+            ._observed > & {
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: left top;
+                transition: all 0.8s ease-out 0.6s;
+            }
+            ._observed._animated > & {
+                opacity: 1;
+                transform: scale(1);
+            }
+            .title-block--centered > & {
+                transform-origin: top;
+            }
+        }
+
         @media (max-width: toEm(767.98)) {
             // font-size: toRem(12);
         }

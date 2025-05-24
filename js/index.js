@@ -119,5 +119,30 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
-  }))
- })
+  }));
+
+
+  //Observer
+  const gallerySlides = document.querySelectorAll(".gallery__swiper .gallery-card");
+  if (gallerySlides.length > 0) {
+    gallerySlides.forEach((slide, i)=> slide.style.transitionDelay = `${i*0.1}s` )
+  }
+
+  const options = {
+    threshold:0.8,
+  };
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("_animated");
+        observer.unobserve(entry.target);
+      }
+    })
+    
+  }, options)
+
+  const titles = document.querySelectorAll("._observed");
+  titles.forEach((title) => observer.observe(title));
+
+})
+
