@@ -76,7 +76,7 @@
 
     &__video-wrapper {
         width: toRem(337);
-        height: toRem(112);
+        min-height: toRem(122);
         border-radius: toRem(20);
         background:
             linear-gradient(0deg, rgba(41, 41, 41, 0.41) 0%, rgba(41, 41, 41, 0.41) 100%),
