@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
       menuBurger?.classList.toggle("_active");
     }
   });
-  const navigationItems = document.querySelectorAll(".navigation__item");
+  const navigationItems = document.querySelectorAll(".menu-burger .navigation__item");
   if (navigationItems.length > 0) {
     navigationItems.forEach((item, i) => {
       item.style.transitionDelay = `${i * 0.2}s`;

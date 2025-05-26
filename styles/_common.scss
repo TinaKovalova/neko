@@ -56,15 +56,6 @@
         text-transform: uppercase;
         font-weight: 700;
         color: $subtitleColor;
-        ._observed > & {
-            transform: scale(0.9) translateY(30%);
-            opacity: 0;
-            transition: all 0.3s ease-out;
-        }
-        ._observed._animated > & {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-        }
         .title-block--centered & {
             transform-origin: top;
             &:not(:last-child) {

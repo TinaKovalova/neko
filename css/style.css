@@ -370,20 +370,6 @@ body:has(.menu-burger.active) {
   font-weight: 700;
   color: #696969;
 }
-._observed > .title-block__subtitle {
-  -webkit-transform: scale(0.9) translateY(30%);
-      -ms-transform: scale(0.9) translateY(30%);
-          transform: scale(0.9) translateY(30%);
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-._observed._animated > .title-block__subtitle {
-  -webkit-transform: scale(1) translateY(0);
-      -ms-transform: scale(1) translateY(0);
-          transform: scale(1) translateY(0);
-  opacity: 1;
-}
 .title-block--centered .title-block__subtitle {
   -webkit-transform-origin: top;
       -ms-transform-origin: top;
