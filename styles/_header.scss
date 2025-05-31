@@ -310,4 +310,7 @@
         padding-block: toRem(20);
         font-size: toRem(16);
     }
+    @media (max-width: toEm(767.98)) {
+        width: 100%;
+    }
 }

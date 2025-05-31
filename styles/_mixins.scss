@@ -50,10 +50,15 @@
         &::after {
             transform: rotate(180deg);
         }
-       
     }
     & .swiper-button-next {
         right: 0;
         transform: translate(50%, -50%);
+    }
+    & .swiper-button-prev,
+    & .swiper-button-next {
+        @media (max-width: toEm(427.98)) {
+            transform: translate(0, -50%);
+        }
     }
 }

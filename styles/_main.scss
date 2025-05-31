@@ -24,6 +24,9 @@
             justify-content: center;
             padding-block-end: toRem(20);
         }
+        @media (max-width: toEm(427.98)) {
+            padding-block-end: toRem(30);
+        }
     }
 
     // .hero__body
@@ -54,6 +57,7 @@
                 width: 100%;
             }
         }
+
         @media (max-width: toEm(991.98)) {
             align-items: center;
             text-align: center;
@@ -145,6 +149,9 @@
             padding-inline-start: toRem(35);
             padding-inline-end: toRem(20);
         }
+        @media (max-width: toEm(427.98)) {
+            display: none;
+        }
     }
 
     //hero__image-wrapper
@@ -233,6 +240,10 @@
                 bottom: toRem(-32);
             }
         }
+    }
+    @media (max-width: toEm(427.98)) {
+        border-end-start-radius: toRem(30);
+        border-end-end-radius: toRem(30);
     }
 }
 
@@ -567,13 +578,13 @@
         }
         & .service-card {
             opacity: 0;
-            transform: scale(0.7);
-            transform-origin: left bottom;
-            transition: all 0.4s ease-out;
+            transform: translateY(30%);
+            transform-origin: bottom;
+            transition: all 0.6s ease-out;
         }
         & .service-card._animated {
             opacity: 1;
-            transform: scale(1);
+            transform: translateY(0);
         }
         @media (max-width: toEm(428)) {
             grid-template-columns: minmax(auto, 1fr);
@@ -614,7 +625,6 @@
     // .care__service
 
     &__service {
-        min-height: toRem(476);
         position: relative;
         &:nth-child(n + 3)::before,
         &:nth-child(n + 3)::after {
@@ -716,29 +726,26 @@
         }
 
         @media (min-width: toEm(991.98)) {
-            &._observed .rate-card {
+            & .rate-card {
                 transition: all 0.6s ease-out;
                 &:first-child {
-                    transform: translateX(100%);
+                    transform: translateX(15%) rotate(-15deg);
                 }
                 &:last-child {
-                    transform: translateX(-100%);
+                    transform: translateX(-15%) rotate(15deg);
                 }
 
                 &.rate-card--primary {
                     z-index: 1;
-                    transform: scale(1);
+                    transform: scale(1.05);
                     transition-delay: 0.6s;
                 }
             }
-            &._observed._animated .rate-card {
-                &:first-child {
-                    transform: translateX(0);
-                }
+            &._animated .rate-card {
+                &:first-child,
                 &:last-child {
-                    transform: translateX(0);
+                    transform: translateX(0) rotate(0);
                 }
-
                 &.rate-card--primary {
                     transform: scale(1.1);
                 }

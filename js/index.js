@@ -114,7 +114,7 @@ window.addEventListener("DOMContentLoaded", () => {
     selectOptions.classList.toggle("_open");
   });
 
-// Details
+  // Details
   const details = document.querySelectorAll(".item-details__details");
 
   details?.forEach(element => element.addEventListener("toggle", (e) => {
@@ -137,9 +137,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const options = {
-    threshold:0.7,
-  };
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -147,8 +144,10 @@ window.addEventListener("DOMContentLoaded", () => {
         observer.unobserve(entry.target);
       }
     })
-    
-  }, options)
+  },
+    {
+      threshold: 0.7,
+    });
 
   const titles = document.querySelectorAll("._observed");
   titles.forEach((title) => observer.observe(title));
@@ -177,5 +176,19 @@ window.addEventListener("DOMContentLoaded", () => {
   
   serviceCards?.forEach((service) => serviceCardObserver.observe(service));
 
+  const pricingRates = document.querySelector(".pricing__rates");
+  const pricingRatesObserver = new IntersectionObserver(
+    (entries, pricingRatesObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("_animated");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.8,
+    }
+  );
+  pricingRatesObserver.observe(pricingRates);
 })
-

@@ -40,6 +40,9 @@ body {
     max-width: toRem($maxWidthContainer);
     padding-inline: toRem($paddingContainer);
     margin: 0 auto;
+    @media (max-width: toEm(427.98)) {
+        padding-inline: toRem(10);
+    }
 }
 
 @import "common";
